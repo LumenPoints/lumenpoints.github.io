@@ -21,6 +21,32 @@
   #root:empty::before { content: ""; position: fixed; inset: 0; background: #161C19; }
 
   /* ============================================
+     DESKTOP FLUID SCALING (>900px)
+     The page is authored at a fixed 1440px. Rather than
+     letting it overflow on small laptops or float in a
+     tiny centered column on 27" monitors, we zoom the
+     whole canvas so 1440px ALWAYS fills the viewport.
+     Content stays perfectly proportioned; only the scale
+     changes. The zoom property keeps layout metrics sane
+     (unlike `transform: scale`) so scrollbars, clicks,
+     anchor links all still work.
+     ============================================ */
+  @media (min-width: 901px) {
+    #root {
+      /* 1440px → 100vw. Clamped so it doesn't get silly. */
+      zoom: clamp(0.55, calc(100vw / 1440), 1.25);
+    }
+    /* Safari doesn't support `zoom` reliably — fallback: */
+    @supports not (zoom: 1) {
+      #root {
+        transform: scale(clamp(0.55, calc(100vw / 1440), 1.25));
+        transform-origin: top left;
+        width: 1440px;
+      }
+    }
+  }
+
+  /* ============================================
      MOBILE RESPONSIVE OVERRIDES (≤900px)
      Page is designed at 1440px. On mobile we:
      - unlock width
@@ -57,10 +83,19 @@
       font-size: 30px !important;
     }
     #root > div > div:first-child > div:nth-child(2) {
-      gap: 18px !important;
-      font-size: 12px !important;
-      flex-wrap: wrap !important;
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      gap: 14px !important;
+      font-size: 10px !important;
+      letter-spacing: 0.12em !important;
       justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      padding: 0 8px !important;
+    }
+    #root > div > div:first-child > div:nth-child(2) a {
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
     }
     #root > div > div:first-child > a:last-child {
       font-size: 12px !important;
@@ -207,6 +242,6 @@
 <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 
-<script src="app.bundle.js?v=4"></script>
+<script src="app.bundle.js?v=7"></script>
 </body>
 </html>
