@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>LumenPoints — Illuminate every point of your health.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="LumenPoints unifies Body, Skin, Mind, Blood, and Trends into a single, legible system for your whole household." />
+<meta property="og:title" content="LumenPoints — Illuminate every point of your health." />
+<meta property="og:description" content="LumenPoints unifies Body, Skin, Mind, Blood, and Trends into a single, legible system for your whole household." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lumenpoints.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #161C19; }
+  body { font-family: "Instrument Sans", system-ui, sans-serif; color: #EDE6D6; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  /* Loading state - hidden once React hydrates */
+  #root:empty::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: #161C19;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+
+<script src="app.bundle.js"></script>
+</body>
+</html>
