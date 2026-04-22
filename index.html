@@ -22,28 +22,38 @@
 
   /* ============================================
      DESKTOP FLUID SCALING (>900px)
-     The page is authored at a fixed 1440px. Rather than
-     letting it overflow on small laptops or float in a
-     tiny centered column on 27" monitors, we zoom the
-     whole canvas so 1440px ALWAYS fills the viewport.
-     Content stays perfectly proportioned; only the scale
-     changes. The zoom property keeps layout metrics sane
-     (unlike `transform: scale`) so scrollbars, clicks,
-     anchor links all still work.
+     The design is authored at a fixed 1440px. To make
+     it flex nicely on any screen, we use CSS `zoom` on
+     the root — supported in all modern browsers
+     (Chrome/Edge/Safari/Firefox 126+) and scales layout
+     metrics properly so clicks, scroll, anchor links all
+     still work correctly.
      ============================================ */
   @media (min-width: 901px) {
+    html, body { overflow-x: hidden; }
     #root {
-      /* 1440px → 100vw. Clamped so it doesn't get silly. */
-      zoom: clamp(0.55, calc(100vw / 1440), 1.25);
+      zoom: 1;  /* default, overridden below */
     }
-    /* Safari doesn't support `zoom` reliably — fallback: */
-    @supports not (zoom: 1) {
-      #root {
-        transform: scale(clamp(0.55, calc(100vw / 1440), 1.25));
-        transform-origin: top left;
-        width: 1440px;
-      }
-    }
+  }
+  /* Small laptop (1280 and under but above mobile): shrink */
+  @media (min-width: 901px) and (max-width: 1279px) {
+    #root { zoom: 0.82; }
+  }
+  /* Standard laptop (1280–1599): slight shrink */
+  @media (min-width: 1280px) and (max-width: 1599px) {
+    #root { zoom: 0.92; }
+  }
+  /* 1600–1919: near-native */
+  @media (min-width: 1600px) and (max-width: 1919px) {
+    #root { zoom: 1.05; }
+  }
+  /* 1920–2399: scale up */
+  @media (min-width: 1920px) and (max-width: 2399px) {
+    #root { zoom: 1.2; }
+  }
+  /* Huge monitors (2400+): cap scaling */
+  @media (min-width: 2400px) {
+    #root { zoom: 1.4; }
   }
 
   /* ============================================
@@ -242,6 +252,6 @@
 <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 
-<script src="app.bundle.js?v=7"></script>
+<script src="app.bundle.js?v=8"></script>
 </body>
 </html>
