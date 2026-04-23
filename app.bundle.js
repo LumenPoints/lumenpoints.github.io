@@ -328,7 +328,7 @@ function D3_Hero() {
       color: D3.terracotta,
       marginBottom: 36
     }
-  }, "\u2726 Founding Access \xB7 May 10 \xB7 100 Spots"), /*#__PURE__*/React.createElement("h1", {
+  }, "\u2726 Get The App"), /*#__PURE__*/React.createElement("h1", {
     style: {
       ...d3Styles.display,
       fontSize: 140,
@@ -504,7 +504,7 @@ function D3_Hero() {
       borderTop: `1px solid ${D3.rule}`,
       borderBottom: `1px solid ${D3.rule}`
     }
-  }, [['5', 'Dimensions tracked'], ['100', 'Founding memberships'], ['$349', 'Lifetime, one-time'], ['May 10', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['5', 'Dimensions tracked'], ['100', 'Founding memberships'], ['$349', 'Lifetime, one-time'], ['May 12', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '28px 24px',
@@ -634,13 +634,13 @@ function D3_ForHer() {
   }, "You're trying to manage your own wellness, helping your partner stay organized with theirs, your aging parent with their medications, and your teenager with their finicky skincare."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
-      fontSize: 19,
-      lineHeight: 1.65,
-      color: 'rgba(237,230,214,0.72)',
+      fontSize: 21,
+      lineHeight: 1.55,
+      color: 'rgba(237,230,214,0.88)',
       marginTop: 24,
       maxWidth: 540
     }
-  }, "No one in wellness is speaking to you. LumenPoints is built for you \u2014 the one carrying the clipboard for everyone you love.")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, "LumenPoints is built for you \u2014 the one carrying the clipboard for everyone you love.")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
@@ -680,9 +680,9 @@ function D3_ForHer() {
     style: {
       marginTop: 28,
       ...d3Styles.body,
-      fontSize: 15,
+      fontSize: 21,
       fontStyle: 'italic',
-      color: 'rgba(237,230,214,0.6)',
+      color: 'rgba(237,230,214,0.78)',
       textAlign: 'right'
     }
   }, "Four people. One mind holding it all."))));
@@ -1021,7 +1021,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store on May 10. iOS first — Android is on the roadmap.'], ['Set up household', 'Create profiles — adults, teens, everyone. Up to five profiles on Premium, each with their own stack, routines, and data.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store on May 12. iOS first — Android is on the roadmap.'], ['Set up household', 'Create profiles — adults, teens, everyone. Up to five profiles on Premium, each with their own stack, routines, and data.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
