@@ -946,11 +946,11 @@ function D3_Founding() {
     style: {
       marginTop: 24
     }
-  }, ['Early access', 'Premium feature unlock', 'Partnered profile — 2 total', 'Beta feedback channel', 'Direct founder support'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['First access to new features, before public release', 'Full Premium, for life — every feature, every update', 'Share with your partner — two accounts, one membership', 'Your feedback shapes what comes next', 'Direct founder support — me, not a help desk'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       gap: 16,
       padding: '14px 0',
       borderBottom: i < 4 ? `1px solid ${D3.rule}` : 'none'
@@ -959,13 +959,16 @@ function D3_Founding() {
     style: {
       ...d3Styles.mono,
       color: D3.gold,
-      width: 30
+      width: 30,
+      flexShrink: 0,
+      paddingTop: 2
     }
   }, "0", i + 1), /*#__PURE__*/React.createElement("span", {
     style: {
       ...d3Styles.body,
       color: D3.cream,
-      fontSize: 17
+      fontSize: 16,
+      lineHeight: 1.5
     }
   }, t)))), /*#__PURE__*/React.createElement("a", {
     href: "#waitlist",
