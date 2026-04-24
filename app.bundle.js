@@ -379,8 +379,8 @@ function D3_Hero() {
     style: {
       padding: '18px 34px',
       background: D3.cream,
-      color: D3.bg,
       ...d3Styles.mono,
+      color: D3.bg,
       fontSize: 14,
       letterSpacing: '0.18em',
       textDecoration: 'none',
