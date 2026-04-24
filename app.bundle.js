@@ -622,7 +622,7 @@ function D3_ForHer() {
       fontStyle: 'italic',
       color: D3.gold
     }
-  }, "holding it all together.")), /*#__PURE__*/React.createElement("div", {
+  }, "drowning in their own data.")), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 21,
@@ -631,7 +631,7 @@ function D3_ForHer() {
       marginTop: 40,
       maxWidth: 540
     }
-  }, "You're trying to manage your own wellness, helping your partner stay organized with theirs, your aging parent with their medications, and your teenager with their finicky skincare."), /*#__PURE__*/React.createElement("div", {
+  }, "Apple Health. Renpho. A supplement tracker. A shoebox of lab PDFs. A skincare routine held in your head. A mental wellness check-in no one is actually doing."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 21,
@@ -640,7 +640,7 @@ function D3_ForHer() {
       marginTop: 24,
       maxWidth: 540
     }
-  }, "LumenPoints is built for you \u2014 the one carrying the clipboard for everyone you love.")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, "You're already collecting the signal. LumenPoints is the first place it can finally be read.")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
@@ -648,7 +648,7 @@ function D3_ForHer() {
       background: D3.rule,
       border: `1px solid ${D3.rule}`
     }
-  }, [['Her stack', "Peptides, bloodwork, HRT, the serum she's been testing for six weeks."], ['His stack', 'Training blocks, supplements, the labs he keeps meaning to schedule.'], ['Her mother', 'Four medications, two specialists, a calendar she holds in her head.'], ['Her teenager', "The skincare routine that finally worked \u2014 if she can remember which product started it."]].map(([who, what], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Too many apps', 'Health data scattered across a dozen trackers — none of them talking to each other.'], ['Too many products', 'New serums, supplements, peptides every week. No clear signal on what is actually working for you.'], ['Ignored wellbeing', 'Mental health lives in a separate tab, if it lives anywhere at all. Sleep, mood, stress — rarely connected to the rest.'], ['No one connecting it', 'Your labs, your stack, your skin, your sleep — nobody is pulling it together. Not your doctor. Not your apps. Not you, on a Tuesday night.']].map(([who, what], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: 32,
@@ -657,24 +657,24 @@ function D3_ForHer() {
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.mono,
-      fontSize: 12,
+      fontSize: 13,
       color: D3.gold,
       marginBottom: 14
     }
   }, "0", i + 1), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.display,
-      fontSize: 26,
+      fontSize: 30,
       fontStyle: 'italic',
       color: D3.cream,
-      marginBottom: 12
+      marginBottom: 14
     }
   }, who), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
-      fontSize: 15,
+      fontSize: 17,
       lineHeight: 1.55,
-      color: 'rgba(237,230,214,0.72)'
+      color: 'rgba(237,230,214,0.78)'
     }
   }, what)))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -685,7 +685,72 @@ function D3_ForHer() {
       color: 'rgba(237,230,214,0.78)',
       textAlign: 'right'
     }
-  }, "Four people. One mind holding it all."))));
+  }, "One place. For the noise to finally make sense."))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative',
+      marginTop: 100,
+      padding: '56px 64px',
+      border: `1px solid ${D3.rule}`,
+      background: 'rgba(237,230,214,0.03)',
+      display: 'grid',
+      gridTemplateColumns: '320px 1fr',
+      gap: 72,
+      alignItems: 'start'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.mono,
+      fontSize: 16,
+      color: D3.terracotta,
+      marginBottom: 16,
+      letterSpacing: '0.22em'
+    }
+  }, "\u2726 A Feature"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.display,
+      fontSize: 42,
+      fontStyle: 'italic',
+      color: D3.gold,
+      lineHeight: 1.05,
+      letterSpacing: '-0.01em'
+    }
+  }, "Track together.", /*#__PURE__*/React.createElement("br", null), "Stay yourself.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 680
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.body,
+      fontSize: 18,
+      lineHeight: 1.6,
+      color: 'rgba(237,230,214,0.86)'
+    }
+  }, "LumenPoints is built for one person at a time. Joint is for the couples who live this way together \u2014 two people, two accounts, one subscription."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.body,
+      fontSize: 18,
+      lineHeight: 1.6,
+      color: 'rgba(237,230,214,0.86)',
+      marginTop: 18
+    }
+  }, "Each of you has your own private LumenPoints. Your bloodwork. Your stack. Your trends. Your mind. Nothing is shared by default, and nothing is merged."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.body,
+      fontSize: 18,
+      lineHeight: 1.6,
+      color: 'rgba(237,230,214,0.86)',
+      marginTop: 18
+    }
+  }, "For couples who want to share specific parts of their picture \u2014 opt-in, per-Point, revocable \u2014 that's coming in our first major update, shaped by what Founding Members tell us they actually want to share."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.body,
+      fontSize: 18,
+      lineHeight: 1.6,
+      color: D3.gold,
+      fontStyle: 'italic',
+      marginTop: 22
+    }
+  }, "Until then: two lives tracked side by side. Separately, intentionally, privately."))));
 }
 function D3_Dimension({
   n,
@@ -862,7 +927,7 @@ function D3_Founding() {
       maxWidth: 480,
       color: 'rgba(237,230,214,0.82)'
     }
-  }, "Five lifetime benefits, one price, yours forever. For the hundred households who want to be first.")), /*#__PURE__*/React.createElement("div", {
+  }, "Five lifetime benefits, one price, yours forever. For the hundred founding members who want to be first.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -890,7 +955,7 @@ function D3_Founding() {
     style: {
       marginTop: 24
     }
-  }, ['Early access for your household', 'Premium feature unlock', 'Beta feedback channel', 'Founding member badge', 'Direct founder support'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['Early access', 'Premium feature unlock', 'Beta feedback channel', 'Founding member badge', 'Direct founder support'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
@@ -1021,7 +1086,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store on May 12. iOS first — Android is on the roadmap.'], ['Set up household', 'Create profiles — adults, teens, everyone. Up to five profiles on Premium, each with their own stack, routines, and data.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store on May 12. iOS first — Android is on the roadmap.'], ['Set up account', 'Choose Individual or Joint account. Premium accounts give full access to AI insights.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
@@ -1253,7 +1318,7 @@ window.D3_Homepage = function D3_Homepage() {
     label: "Trends",
     color: LP_COLORS.trends,
     image: "img/trends.jpg",
-    title: "Your data. Your household's story. Translated.",
+    title: "Your data. Your story. Translated.",
     body: "Every data point becomes a line in someone's story. AI surfaces the patterns you'd never spot on your own \u2014 how his supplement timing shifted his sleep, why your recovery dipped in week three, what finally landed with your teenager. Visualized clearly. Interpreted intelligently."
   }), /*#__PURE__*/React.createElement(D3_Setup, null), /*#__PURE__*/React.createElement(D3_Wordmark, null), /*#__PURE__*/React.createElement(D3_ForHer, null), /*#__PURE__*/React.createElement(D3_Founding, null), /*#__PURE__*/React.createElement(D3_Waitlist, null), /*#__PURE__*/React.createElement(D3_Footer, null));
 };
