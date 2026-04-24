@@ -371,10 +371,11 @@ function D3_Hero() {
       display: 'flex',
       gap: 16,
       marginTop: 48,
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'flex-start'
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#founding",
+    href: "#waitlist",
     style: {
       padding: '18px 34px',
       background: D3.cream,
@@ -383,18 +384,8 @@ function D3_Hero() {
       fontSize: 14,
       letterSpacing: '0.18em',
       textDecoration: 'none',
-      cursor: 'pointer'
-    }
-  }, "Claim Founding \xB7 $349"), /*#__PURE__*/React.createElement("a", {
-    href: "#waitlist",
-    style: {
-      padding: '18px 30px',
-      border: `1px solid ${D3.rule}`,
-      ...d3Styles.mono,
-      fontSize: 14,
-      color: D3.creamSoft,
-      textDecoration: 'none',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      display: 'inline-block'
     }
   }, "Join Waitlist"))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -725,7 +716,7 @@ function D3_ForHer() {
       lineHeight: 1.6,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "LumenPoints is built for one person at a time. Joint is for the couples who live this way together \u2014 two people, two accounts, one subscription."), /*#__PURE__*/React.createElement("div", {
+  }, "LumenPoints is built for one person at a time. Partnered is for the couples who live this way together \u2014 two people, two accounts, one subscription."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 18,
@@ -750,7 +741,7 @@ function D3_ForHer() {
       fontStyle: 'italic',
       marginTop: 22
     }
-  }, "Until then: two lives tracked side by side. Separately, intentionally, privately."))));
+  }, "Until then: Track side by side. Separately, intentionally, and privately."))));
 }
 function D3_Dimension({
   n,
@@ -1086,7 +1077,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store on May 12. iOS first — Android is on the roadmap.'], ['Set up account', 'Choose Individual or Joint account. Premium accounts give full access to AI insights.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store on May 12. iOS first — Android is on the roadmap.'], ['Set up account', 'Choose Individual or Partnered account. Premium accounts give full access to AI insights.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
