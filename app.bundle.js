@@ -918,7 +918,7 @@ function D3_Founding() {
       maxWidth: 480,
       color: 'rgba(237,230,214,0.82)'
     }
-  }, "Five lifetime benefits, one price, yours forever. For the hundred founding members who want to be first.")), /*#__PURE__*/React.createElement("div", {
+  }, "Five lifetime benefits, one price, yours forever. Includes a second profile \u2014 partner, parent, or child. For the hundred founding members who want to be first.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -946,7 +946,7 @@ function D3_Founding() {
     style: {
       marginTop: 24
     }
-  }, ['Early access', 'Premium feature unlock', 'Beta feedback channel', 'Founding member badge', 'Direct founder support'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['Early access', 'Premium feature unlock', 'Partnered profile — 2 total', 'Beta feedback channel', 'Direct founder support'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
