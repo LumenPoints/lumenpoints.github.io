@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>LumenPoints — Coming Mid-May</title>
 <meta name="description" content="LumenPoints — every point of your health, illuminated. Join the waitlist for early access." />
-
-<!-- Open Graph (when someone shares the link) -->
 <meta property="og:title" content="LumenPoints — Coming Mid-May" />
 <meta property="og:description" content="One place. Every metric. Full clarity." />
 <meta property="og:type" content="website" />
@@ -20,93 +18,131 @@
   :root {
     --base: #1a1814;
     --base-soft: #14120f;
+    --base-elevated: #211e19;
     --cream: #ede6d6;
-    --cream-dim: rgba(237, 230, 214, 0.72);
-    --cream-faint: rgba(237, 230, 214, 0.45);
+    --cream-dim: rgba(237, 230, 214, 0.78);
+    --cream-faint: rgba(237, 230, 214, 0.5);
     --gold: #c9a86a;
-    --gold-soft: rgba(201, 168, 106, 0.18);
+    --gold-soft: rgba(201, 168, 106, 0.22);
     --rule: rgba(237, 230, 214, 0.12);
+    --rule-strong: rgba(237, 230, 214, 0.22);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--base); color: var(--cream); font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
-  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: hidden; }
 
   .ambient {
     position: fixed; inset: 0; pointer-events: none; z-index: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201,168,106,0.10) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 50% 90%, rgba(126,107,135,0.08) 0%, transparent 70%);
+      radial-gradient(ellipse 70% 50% at 30% 20%, rgba(201,168,106,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 75% 75%, rgba(126,107,135,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(197,114,92,0.06) 0%, transparent 70%);
   }
 
-  main { flex: 1; position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; width: 100%; }
-
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--gold);
-    text-transform: uppercase; display: flex; align-items: center; gap: 10px;
+  /* ============ NAV ============ */
+  nav.top {
+    position: relative; z-index: 5;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    padding: 28px 56px;
+    display: flex; align-items: center; justify-content: space-between;
   }
-  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); animation: pulse 2.4s ease-in-out infinite; }
+  .nav-mark {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500;
+    letter-spacing: -0.02em; color: var(--cream); text-decoration: none;
+  }
+  .nav-mark em { color: var(--gold); font-style: italic; font-weight: 500; }
+  .nav-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
+    color: var(--gold); text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); animation: pulse 2.4s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  .star-wrap { margin: 36px auto 28px; display: flex; justify-content: center; }
-  .star-wrap svg { width: 88px; height: 88px; }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 8vw, 64px);
-    line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 8px; text-align: center; text-wrap: balance;
-  }
-  h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
-
-  .tagline {
-    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 3.6vw, 22px);
-    color: var(--gold); text-align: center; margin: 0 0 36px; line-height: 1.35;
+  /* ============ HERO ============ */
+  .hero {
+    position: relative; z-index: 1;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    padding: 56px 56px 96px;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px;
+    align-items: center;
   }
 
-  .premise {
-    background: var(--base-soft); border: 1px solid var(--rule); border-radius: 14px;
-    padding: 28px 28px; margin: 0 0 40px;
+  .hero-left .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.24em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 28px;
+    display: inline-block;
   }
-  .premise .label {
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
-    color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+  .hero-left h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(56px, 6.5vw, 96px);
+    line-height: 0.96; letter-spacing: -0.025em; margin: 0 0 24px;
+    text-wrap: balance;
   }
-  .premise h2 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(22px, 4.5vw, 28px);
-    line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 14px;
+  .hero-left h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
+  .hero-left .lede {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(20px, 2.2vw, 26px);
+    color: var(--gold); margin: 0 0 36px; line-height: 1.35; max-width: 540px;
   }
-  .premise h2 em { color: var(--gold); font-style: italic; }
-  .premise p {
-    font-size: 14.5px; line-height: 1.65; color: var(--cream-dim); margin: 0;
-  }
-  .premise p em { color: var(--gold); font-style: italic; }
 
-  /* ============ Waitlist form ============ */
-  .waitlist {
-    background: linear-gradient(180deg, rgba(201,168,106,0.05) 0%, transparent 100%);
-    border: 1px solid var(--gold-soft); border-radius: 14px;
-    padding: 28px 28px 24px; margin: 0 0 28px;
+  .hero-stats {
+    display: flex; gap: 36px; padding-top: 28px;
+    border-top: 1px solid var(--rule);
   }
-  .waitlist h3 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 22px;
-    margin: 0 0 6px; letter-spacing: -0.015em;
+  .hero-stats .stat {
+    display: flex; flex-direction: column;
   }
-  .waitlist h3 em { color: var(--gold); font-style: italic; }
-  .waitlist p.sub {
-    font-size: 13.5px; color: var(--cream-dim); margin: 0 0 18px; line-height: 1.55;
+  .hero-stats .stat .num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 36px; color: var(--gold); line-height: 1; margin-bottom: 6px;
   }
-  .form {
-    display: flex; gap: 8px; flex-wrap: wrap;
+  .hero-stats .stat .lbl {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 0.2em; color: var(--cream-faint); text-transform: uppercase;
   }
+
+  /* ============ Hero right: faceted star + waitlist ============ */
+  .hero-right {
+    display: flex; flex-direction: column; align-items: center; gap: 32px;
+  }
+  .hero-star { width: 200px; height: 200px; }
+
+  .waitlist-card {
+    width: 100%; max-width: 460px;
+    background: linear-gradient(180deg, rgba(201,168,106,0.07) 0%, rgba(33,30,25,0.6) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--gold-soft);
+    border-radius: 18px;
+    padding: 32px 32px 28px;
+  }
+  .waitlist-card .device-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; background: rgba(201,168,106,0.10);
+    border: 1px solid var(--gold-soft); border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.18em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 18px;
+  }
+  .waitlist-card h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 28px; margin: 0 0 8px; letter-spacing: -0.015em; line-height: 1.1;
+  }
+  .waitlist-card h3 em { color: var(--gold); font-style: italic; }
+  .waitlist-card p.sub {
+    font-size: 14px; color: var(--cream-dim); margin: 0 0 20px; line-height: 1.55;
+  }
+  .form { display: flex; flex-direction: column; gap: 10px; }
   .form input[type="email"] {
-    flex: 1; min-width: 200px; background: var(--base); color: var(--cream);
-    border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px;
-    font-family: inherit; font-size: 15px; outline: none;
-    transition: border-color 0.2s;
+    background: rgba(20,18,15,0.6); color: var(--cream);
+    border: 1px solid var(--rule-strong); border-radius: 12px;
+    padding: 16px 18px; font-family: inherit; font-size: 15.5px; outline: none;
+    transition: border-color 0.2s, background 0.2s;
   }
-  .form input[type="email"]:focus { border-color: var(--gold); }
+  .form input[type="email"]:focus { border-color: var(--gold); background: rgba(20,18,15,0.85); }
   .form input[type="email"]::placeholder { color: var(--cream-faint); }
   .form button {
-    background: var(--gold); color: var(--base); border: none; border-radius: 10px;
-    padding: 14px 22px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 14px;
+    background: var(--gold); color: var(--base); border: none; border-radius: 12px;
+    padding: 16px 24px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 14.5px;
     letter-spacing: 0.02em; cursor: pointer; transition: filter 0.2s, transform 0.1s;
   }
   .form button:hover { filter: brightness(1.08); }
@@ -114,49 +150,121 @@
   .form button:disabled { opacity: 0.6; cursor: wait; }
 
   .platforms {
-    display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;
+    display: flex; gap: 10px; margin-top: 18px;
   }
   .platform {
-    flex: 1; min-width: 140px; display: flex; align-items: center; gap: 10px;
-    padding: 12px 14px; background: var(--base); border: 1px solid var(--rule);
+    flex: 1; display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px; background: rgba(20,18,15,0.5); border: 1px solid var(--rule);
     border-radius: 10px; font-size: 13px;
   }
-  .platform .ic { width: 18px; height: 18px; opacity: 0.7; }
-  .platform .lbl { color: var(--cream-dim); }
-  .platform .lbl strong { color: var(--cream); display: block; font-weight: 500; }
+  .platform .ic { width: 18px; height: 18px; opacity: 0.7; flex-shrink: 0; }
+  .platform .lbl { color: var(--cream-dim); line-height: 1.3; }
+  .platform .lbl strong { color: var(--cream); display: block; font-weight: 500; font-size: 13px; }
+  .platform .lbl span { font-size: 11px; color: var(--cream-faint); }
 
   .success {
-    display: none; padding: 20px 22px; background: rgba(201,168,106,0.08);
-    border: 1px solid var(--gold-soft); border-radius: 10px; margin-top: 14px;
+    display: none; padding: 18px 20px; background: rgba(201,168,106,0.10);
+    border: 1px solid var(--gold-soft); border-radius: 12px; margin-top: 14px;
   }
   .success.show { display: block; }
-  .success p {
-    margin: 0; font-size: 14px; color: var(--cream); line-height: 1.55;
-  }
+  .success p { margin: 0; font-size: 14px; color: var(--cream); line-height: 1.55; }
   .success p em { color: var(--gold); font-style: italic; }
+
+  /* ============ The Premise section ============ */
+  .premise-section {
+    position: relative; z-index: 1;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    padding: 96px 56px;
+    border-top: 1px solid var(--rule);
+  }
+  .premise-grid {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start;
+  }
+  .premise-eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.24em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 20px;
+  }
+  .premise-section h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(40px, 4.5vw, 60px);
+    line-height: 1.02; letter-spacing: -0.02em; margin: 0;
+    text-wrap: balance;
+  }
+  .premise-section h2 em { font-style: italic; color: var(--gold); font-weight: 500; }
+  .premise-section .body {
+    font-size: 17px; line-height: 1.65; color: var(--cream-dim);
+  }
+  .premise-section .body p { margin: 0 0 20px; }
+  .premise-section .body p em { color: var(--gold); font-style: italic; }
+  .premise-section .body p:last-child { margin-bottom: 0; }
+
+  /* ============ Five points ============ */
+  .points-section {
+    position: relative; z-index: 1;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    padding: 0 56px 96px;
+  }
+  .points-eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.24em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 32px; text-align: center;
+  }
+  .points-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  }
+  .point {
+    background: var(--base-elevated); border: 1px solid var(--rule);
+    border-radius: 14px; padding: 24px 20px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .point:hover { transform: translateY(-4px); border-color: var(--gold-soft); }
+  .point .swatch {
+    width: 28px; height: 28px; border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 8px 16px -8px currentColor;
+  }
+  .point .name {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--cream); line-height: 1;
+  }
+  .point .desc {
+    font-size: 12.5px; line-height: 1.55; color: var(--cream-faint);
+  }
 
   /* ============ Footer ============ */
   footer {
-    text-align: center; padding: 24px 20px 40px; font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-faint);
+    margin-top: auto;
+    border-top: 1px solid var(--rule);
+    padding: 36px 56px 48px;
+    max-width: 1280px; margin-left: auto; margin-right: auto; width: 100%;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--cream-faint);
     position: relative; z-index: 1;
   }
-  footer a { color: var(--cream-dim); text-decoration: none; }
+  footer a { color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--gold); }
-  .footer-rule { width: 28px; height: 1px; background: var(--gold-soft); margin: 0 auto 18px; }
 
-  /* Detected device chip */
-  .device-chip {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 12px; background: rgba(201,168,106,0.08);
-    border: 1px solid var(--gold-soft); border-radius: 100px;
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
-    color: var(--gold); text-transform: uppercase; margin-bottom: 16px;
+  /* ============ MOBILE / TABLET ============ */
+  @media (max-width: 980px) {
+    nav.top { padding: 22px 28px; }
+    .hero { grid-template-columns: 1fr; gap: 56px; padding: 24px 28px 64px; }
+    .hero-right { order: -1; }
+    .hero-star { width: 140px; height: 140px; }
+    .hero-left h1 { text-align: center; }
+    .hero-left .lede { text-align: center; margin-left: auto; margin-right: auto; }
+    .hero-left .eyebrow { display: block; text-align: center; }
+    .hero-stats { justify-content: center; flex-wrap: wrap; gap: 24px; }
+    .premise-section { padding: 64px 28px; }
+    .premise-grid { grid-template-columns: 1fr; gap: 32px; }
+    .points-section { padding: 0 28px 64px; }
+    .points-grid { grid-template-columns: repeat(2, 1fr); }
+    .points-eyebrow { text-align: left; }
+    footer { padding: 28px; flex-direction: column; align-items: flex-start; }
   }
-
-  @media (max-width: 480px) {
-    main { padding: 40px 20px 60px; }
-    .premise, .waitlist { padding: 22px 20px; }
+  @media (max-width: 540px) {
+    .points-grid { grid-template-columns: 1fr; }
+    .platforms { flex-direction: column; }
+    .waitlist-card { padding: 26px 24px 22px; }
   }
 </style>
 </head>
@@ -164,61 +272,111 @@
 
 <div class="ambient"></div>
 
-<main>
-  <div style="text-align:center">
-    <div class="eyebrow"><span class="dot"></span>Coming Mid-May 2026</div>
-  </div>
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <a class="nav-mark" href="https://lumenpoints.com">Lumen<em>Points</em></a>
+  <div class="nav-meta"><span class="dot"></span>Coming Mid-May 2026</div>
+</nav>
 
-  <div class="star-wrap" id="star"></div>
-
-  <h1>Lumen<em>Points</em></h1>
-  <p class="tagline">Every point of your health, illuminated.</p>
-
-  <div class="premise">
-    <div class="label">✦ The Premise</div>
-    <h2>One place.<br/>Every metric.<br/><em>Full clarity.</em></h2>
-    <p>
-      Your wellness has been scattered across a dozen apps, a notes file, a shoebox of labs, and your memory. <em>LumenPoints</em> is the first place where all five dimensions live together — so the pattern, finally, has somewhere to emerge.
-    </p>
-  </div>
-
-  <div class="waitlist" id="waitlist">
-    <div id="device-chip-wrap" style="text-align:center"></div>
-
-    <h3>Be first <em>to know.</em></h3>
-    <p class="sub">We launch on iOS and Android in mid-May. Drop your email and we'll send you a TestFlight link the day it goes live — no marketing fluff.</p>
-
-    <form class="form" id="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
-      <input type="hidden" name="_subject" value="LumenPoints waitlist signup" />
-      <input type="hidden" name="device" id="device-input" value="" />
-      <button type="submit" id="submit-btn">Join the waitlist →</button>
-    </form>
-
-    <div class="platforms">
-      <div class="platform">
-        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.36-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.36C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        <span class="lbl"><strong>iOS</strong>iPhone · iPad</span>
-      </div>
-      <div class="platform">
-        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M5.7 19.7c-.4 0-.7-.3-.7-.7V5c0-.4.3-.7.7-.7l9.6 7.4-9.6 8zm12.4-7.5l-2.5-2 2.5-2 .8.5c.7.4.7 1.4 0 1.8l-.8.5zm-1.7 1.4l-9.5 7.7L13.6 13l3 1.6zm0-2.8L13.6 11 6.9 4.6l9.5 7.7z"/></svg>
-        <span class="lbl"><strong>Android</strong>Phone · Tablet</span>
-      </div>
-    </div>
-
-    <div class="success" id="success">
-      <p>You're in. We'll email you <em>the moment</em> LumenPoints goes live in your store.</p>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">◇ The premise</span>
+    <h1>Every point of your <em>health,</em> illuminated.</h1>
+    <p class="lede">One place. Every metric. Full clarity. Across body, skin, mind, blood, and trends — finally living together.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">5</span><span class="lbl">Dimensions</span></div>
+      <div class="stat"><span class="num">1</span><span class="lbl">Place</span></div>
+      <div class="stat"><span class="num">∞</span><span class="lbl">Patterns</span></div>
     </div>
   </div>
-</main>
 
+  <aside class="hero-right">
+    <div class="hero-star" id="star"></div>
+    <div class="waitlist-card">
+      <div id="device-chip-wrap"></div>
+      <h3>Be first <em>to know.</em></h3>
+      <p class="sub">We launch on iOS and Android in mid-May. Drop your email — we'll send the link the day it goes live.</p>
+
+      <form class="form" id="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+        <input type="hidden" name="_subject" value="LumenPoints waitlist signup" />
+        <input type="hidden" name="device" id="device-input" value="" />
+        <button type="submit" id="submit-btn">Join the waitlist →</button>
+      </form>
+
+      <div class="platforms">
+        <div class="platform">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.36-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.36C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <span class="lbl"><strong>iOS</strong><span>iPhone · iPad</span></span>
+        </div>
+        <div class="platform">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M5.7 19.7c-.4 0-.7-.3-.7-.7V5c0-.4.3-.7.7-.7l9.6 7.4-9.6 8zm12.4-7.5l-2.5-2 2.5-2 .8.5c.7.4.7 1.4 0 1.8l-.8.5zm-1.7 1.4l-9.5 7.7L13.6 13l3 1.6zm0-2.8L13.6 11 6.9 4.6l9.5 7.7z"/></svg>
+          <span class="lbl"><strong>Android</strong><span>Phone · Tablet</span></span>
+        </div>
+      </div>
+
+      <div class="success" id="success">
+        <p>You're in. We'll email you <em>the moment</em> LumenPoints goes live in your store.</p>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<!-- ============ PREMISE ============ -->
+<section class="premise-section">
+  <div class="premise-grid">
+    <div>
+      <div class="premise-eyebrow">✦ The premise</div>
+      <h2>One place.<br/>Every metric.<br/><em>Full clarity.</em></h2>
+    </div>
+    <div class="body">
+      <p>Your wellness has been scattered across a dozen apps, a notes file, a shoebox of labs, and your memory. <em>LumenPoints</em> is the first place where all five dimensions live together — so the pattern, finally, has somewhere to emerge.</p>
+      <p>We built it because we couldn't find it. Now you don't have to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIVE POINTS ============ -->
+<section class="points-section">
+  <div class="points-eyebrow">◇ The five points</div>
+  <div class="points-grid">
+    <div class="point">
+      <div class="swatch" style="background:#B8C9A6;color:#B8C9A6"></div>
+      <div class="name">Trends</div>
+      <div class="desc">The slow patterns — sleep, energy, mood — over weeks and months.</div>
+    </div>
+    <div class="point">
+      <div class="swatch" style="background:#9A9692;color:#9A9692"></div>
+      <div class="name">Body</div>
+      <div class="desc">Weight, vitals, movement, recovery — the physical signal.</div>
+    </div>
+    <div class="point">
+      <div class="swatch" style="background:#C5725C;color:#C5725C"></div>
+      <div class="name">Blood</div>
+      <div class="desc">Lab panels, biomarkers, reference ranges — clearly read.</div>
+    </div>
+    <div class="point">
+      <div class="swatch" style="background:#7E6B87;color:#7E6B87"></div>
+      <div class="name">Skin</div>
+      <div class="desc">Photos and notes that track real change over time.</div>
+    </div>
+    <div class="point">
+      <div class="swatch" style="background:#2F4438;color:#2F4438"></div>
+      <div class="name">Mind</div>
+      <div class="desc">Mood, focus, sleep quality — the inner weather.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-rule"></div>
-  <a href="https://lumenpoints.com">lumenpoints.com</a> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#80e8e5ececefc0ecf5ede5eef0efe9eef4f3aee3efed"><span class="__cf_email__" data-cfemail="38505d54545778544d555d56485751564c4b165b5755">[email&#160;protected]</span></a>
+  <div><a href="https://lumenpoints.com">lumenpoints.com</a> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#3c54595050537c50495159524c535552484f125f5351"><span class="__cf_email__" data-cfemail="6a020f0606052a061f070f041a0503041e1944090507">[email&#160;protected]</span></a></div>
+  <div>© LumenPoints 2026</div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ============ Faceted StarMark (matches brand) ============
+  // ============ Faceted StarMark ============
   (function renderStar() {
     const cx = 500, cy = 500, R = 440, r = 170;
     const outer = [], inner = [];
@@ -243,17 +401,15 @@
       facets.push({ d: `M${tip[0]},${tip[1]} L${li[0]},${li[1]} L${cx},${cy} Z`, fill: pairs[i][0] });
       facets.push({ d: `M${tip[0]},${tip[1]} L${ri[0]},${ri[1]} L${cx},${cy} Z`, fill: pairs[i][1] });
     }
-    const svg = `<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">${
+    const svg = `<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">${
       facets.map(f => `<path d="${f.d}" fill="${f.fill}"/>`).join('')
     }</svg>`;
     document.getElementById('star').innerHTML = svg;
   })();
 
   // ============ Device detection ============
-  // POST-LAUNCH: replace these URLs with the live App Store / Play Store URLs.
-  // Pre-launch (today), all paths land on this same waitlist page.
-  const APP_STORE_URL  = ''; // e.g. 'https://apps.apple.com/app/lumenpoints/idXXXXXXXXX'
-  const PLAY_STORE_URL = ''; // e.g. 'https://play.google.com/store/apps/details?id=com.lumenpoints'
+  const APP_STORE_URL  = ''; // POST-LAUNCH: 'https://apps.apple.com/app/lumenpoints/idXXXXXXXXX'
+  const PLAY_STORE_URL = ''; // POST-LAUNCH: 'https://play.google.com/store/apps/details?id=com.lumenpoints'
 
   const ua = navigator.userAgent || '';
   const isIOS     = /iPhone|iPad|iPod/i.test(ua);
@@ -263,35 +419,26 @@
   else if (isAndroid) device = 'Android';
 
   document.getElementById('device-input').value = device;
-
-  // Show device chip pre-launch (so visitor knows we know which platform they're on)
   const chipWrap = document.getElementById('device-chip-wrap');
-  if (device === 'iOS') {
-    chipWrap.innerHTML = '<div class="device-chip">◇ iOS detected · TestFlight link incoming mid-May</div>';
-  } else if (device === 'Android') {
-    chipWrap.innerHTML = '<div class="device-chip">◇ Android detected · Play link incoming mid-May</div>';
-  }
+  if (device === 'iOS')     chipWrap.innerHTML = '<div class="device-chip">◇ iOS detected · TestFlight at launch</div>';
+  else if (device === 'Android') chipWrap.innerHTML = '<div class="device-chip">◇ Android detected · Play link at launch</div>';
 
-  // POST-LAUNCH redirect logic — uncomment when stores are live:
+  // POST-LAUNCH redirect — uncomment when stores are live:
   /*
   if (isIOS && APP_STORE_URL)         location.replace(APP_STORE_URL);
   else if (isAndroid && PLAY_STORE_URL) location.replace(PLAY_STORE_URL);
-  // Desktop falls through to the page (no redirect).
   */
 
-  // ============ Form submit (graceful fallback if no Formspree yet) ============
+  // ============ Form submit ============
   const form = document.getElementById('waitlist-form');
   const successEl = document.getElementById('success');
   const submitBtn = document.getElementById('submit-btn');
 
   form.addEventListener('submit', async (e) => {
-    // If Formspree URL is still placeholder, intercept and just show success
-    // (so the form doesn't break before you've set up the backend)
     if (form.action.includes('YOUR_FORMSPREE_ID')) {
       e.preventDefault();
       submitBtn.disabled = true;
       submitBtn.textContent = 'Saved (locally) ✓';
-      // Stash in localStorage so you can review during testing
       const emails = JSON.parse(localStorage.getItem('lp_waitlist') || '[]');
       emails.push({ email: form.email.value, device, ts: Date.now() });
       localStorage.setItem('lp_waitlist', JSON.stringify(emails));
@@ -299,26 +446,18 @@
       console.log('[LumenPoints] Waitlist (local):', emails);
       return;
     }
-    // Real Formspree path — let it submit, but show success without page reload
     e.preventDefault();
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     try {
       const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
+        method: 'POST', body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
-      if (res.ok) {
-        successEl.classList.add('show');
-        submitBtn.textContent = 'Joined ✓';
-      } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Try again';
-      }
-    } catch (err) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Try again';
+      if (res.ok) { successEl.classList.add('show'); submitBtn.textContent = 'Joined ✓'; }
+      else { submitBtn.disabled = false; submitBtn.textContent = 'Try again'; }
+    } catch {
+      submitBtn.disabled = false; submitBtn.textContent = 'Try again';
     }
   });
 </script>
