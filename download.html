@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>LumenPoints — Coming Mid-May</title>
+<meta name="description" content="LumenPoints — every point of your health, illuminated. Join the waitlist for early access." />
+
+<!-- Open Graph (when someone shares the link) -->
+<meta property="og:title" content="LumenPoints — Coming Mid-May" />
+<meta property="og:description" content="One place. Every metric. Full clarity." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lumenpoints.com/download" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --base: #1a1814;
+    --base-soft: #14120f;
+    --cream: #ede6d6;
+    --cream-dim: rgba(237, 230, 214, 0.72);
+    --cream-faint: rgba(237, 230, 214, 0.45);
+    --gold: #c9a86a;
+    --gold-soft: rgba(201, 168, 106, 0.18);
+    --rule: rgba(237, 230, 214, 0.12);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--base); color: var(--cream); font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+
+  .ambient {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201,168,106,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 50% 90%, rgba(126,107,135,0.08) 0%, transparent 70%);
+  }
+
+  main { flex: 1; position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; width: 100%; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--gold);
+    text-transform: uppercase; display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .star-wrap { margin: 36px auto 28px; display: flex; justify-content: center; }
+  .star-wrap svg { width: 88px; height: 88px; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 8px; text-align: center; text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
+
+  .tagline {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 3.6vw, 22px);
+    color: var(--gold); text-align: center; margin: 0 0 36px; line-height: 1.35;
+  }
+
+  .premise {
+    background: var(--base-soft); border: 1px solid var(--rule); border-radius: 14px;
+    padding: 28px 28px; margin: 0 0 40px;
+  }
+  .premise .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .premise h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(22px, 4.5vw, 28px);
+    line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 14px;
+  }
+  .premise h2 em { color: var(--gold); font-style: italic; }
+  .premise p {
+    font-size: 14.5px; line-height: 1.65; color: var(--cream-dim); margin: 0;
+  }
+  .premise p em { color: var(--gold); font-style: italic; }
+
+  /* ============ Waitlist form ============ */
+  .waitlist {
+    background: linear-gradient(180deg, rgba(201,168,106,0.05) 0%, transparent 100%);
+    border: 1px solid var(--gold-soft); border-radius: 14px;
+    padding: 28px 28px 24px; margin: 0 0 28px;
+  }
+  .waitlist h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 22px;
+    margin: 0 0 6px; letter-spacing: -0.015em;
+  }
+  .waitlist h3 em { color: var(--gold); font-style: italic; }
+  .waitlist p.sub {
+    font-size: 13.5px; color: var(--cream-dim); margin: 0 0 18px; line-height: 1.55;
+  }
+  .form {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .form input[type="email"] {
+    flex: 1; min-width: 200px; background: var(--base); color: var(--cream);
+    border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px;
+    font-family: inherit; font-size: 15px; outline: none;
+    transition: border-color 0.2s;
+  }
+  .form input[type="email"]:focus { border-color: var(--gold); }
+  .form input[type="email"]::placeholder { color: var(--cream-faint); }
+  .form button {
+    background: var(--gold); color: var(--base); border: none; border-radius: 10px;
+    padding: 14px 22px; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 14px;
+    letter-spacing: 0.02em; cursor: pointer; transition: filter 0.2s, transform 0.1s;
+  }
+  .form button:hover { filter: brightness(1.08); }
+  .form button:active { transform: translateY(1px); }
+  .form button:disabled { opacity: 0.6; cursor: wait; }
+
+  .platforms {
+    display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;
+  }
+  .platform {
+    flex: 1; min-width: 140px; display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px; background: var(--base); border: 1px solid var(--rule);
+    border-radius: 10px; font-size: 13px;
+  }
+  .platform .ic { width: 18px; height: 18px; opacity: 0.7; }
+  .platform .lbl { color: var(--cream-dim); }
+  .platform .lbl strong { color: var(--cream); display: block; font-weight: 500; }
+
+  .success {
+    display: none; padding: 20px 22px; background: rgba(201,168,106,0.08);
+    border: 1px solid var(--gold-soft); border-radius: 10px; margin-top: 14px;
+  }
+  .success.show { display: block; }
+  .success p {
+    margin: 0; font-size: 14px; color: var(--cream); line-height: 1.55;
+  }
+  .success p em { color: var(--gold); font-style: italic; }
+
+  /* ============ Footer ============ */
+  footer {
+    text-align: center; padding: 24px 20px 40px; font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-faint);
+    position: relative; z-index: 1;
+  }
+  footer a { color: var(--cream-dim); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  .footer-rule { width: 28px; height: 1px; background: var(--gold-soft); margin: 0 auto 18px; }
+
+  /* Detected device chip */
+  .device-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; background: rgba(201,168,106,0.08);
+    border: 1px solid var(--gold-soft); border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 16px;
+  }
+
+  @media (max-width: 480px) {
+    main { padding: 40px 20px 60px; }
+    .premise, .waitlist { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient"></div>
+
+<main>
+  <div style="text-align:center">
+    <div class="eyebrow"><span class="dot"></span>Coming Mid-May 2026</div>
+  </div>
+
+  <div class="star-wrap" id="star"></div>
+
+  <h1>Lumen<em>Points</em></h1>
+  <p class="tagline">Every point of your health, illuminated.</p>
+
+  <div class="premise">
+    <div class="label">✦ The Premise</div>
+    <h2>One place.<br/>Every metric.<br/><em>Full clarity.</em></h2>
+    <p>
+      Your wellness has been scattered across a dozen apps, a notes file, a shoebox of labs, and your memory. <em>LumenPoints</em> is the first place where all five dimensions live together — so the pattern, finally, has somewhere to emerge.
+    </p>
+  </div>
+
+  <div class="waitlist" id="waitlist">
+    <div id="device-chip-wrap" style="text-align:center"></div>
+
+    <h3>Be first <em>to know.</em></h3>
+    <p class="sub">We launch on iOS and Android in mid-May. Drop your email and we'll send you a TestFlight link the day it goes live — no marketing fluff.</p>
+
+    <form class="form" id="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+      <input type="hidden" name="_subject" value="LumenPoints waitlist signup" />
+      <input type="hidden" name="device" id="device-input" value="" />
+      <button type="submit" id="submit-btn">Join the waitlist →</button>
+    </form>
+
+    <div class="platforms">
+      <div class="platform">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.36-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.36C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        <span class="lbl"><strong>iOS</strong>iPhone · iPad</span>
+      </div>
+      <div class="platform">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M5.7 19.7c-.4 0-.7-.3-.7-.7V5c0-.4.3-.7.7-.7l9.6 7.4-9.6 8zm12.4-7.5l-2.5-2 2.5-2 .8.5c.7.4.7 1.4 0 1.8l-.8.5zm-1.7 1.4l-9.5 7.7L13.6 13l3 1.6zm0-2.8L13.6 11 6.9 4.6l9.5 7.7z"/></svg>
+        <span class="lbl"><strong>Android</strong>Phone · Tablet</span>
+      </div>
+    </div>
+
+    <div class="success" id="success">
+      <p>You're in. We'll email you <em>the moment</em> LumenPoints goes live in your store.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-rule"></div>
+  <a href="https://lumenpoints.com">lumenpoints.com</a> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#80e8e5ececefc0ecf5ede5eef0efe9eef4f3aee3efed"><span class="__cf_email__" data-cfemail="38505d54545778544d555d56485751564c4b165b5755">[email&#160;protected]</span></a>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ============ Faceted StarMark (matches brand) ============
+  (function renderStar() {
+    const cx = 500, cy = 500, R = 440, r = 170;
+    const outer = [], inner = [];
+    for (let i = 0; i < 5; i++) {
+      const a = -Math.PI / 2 + i * 2 * Math.PI / 5;
+      outer.push([cx + R * Math.cos(a), cy + R * Math.sin(a)]);
+      const ai = a + Math.PI / 5;
+      inner.push([cx + r * Math.cos(ai), cy + r * Math.sin(ai)]);
+    }
+    const pairs = [
+      ['#2F4438', '#B8C9A6'],
+      ['#6f6c69', '#9A9692'],
+      ['#a85b49', '#C5725C'],
+      ['#5e4f66', '#7E6B87'],
+      ['#6f6c69', '#9A9692'],
+    ];
+    const facets = [];
+    for (let i = 0; i < 5; i++) {
+      const tip = outer[i];
+      const li = inner[(i + 4) % 5];
+      const ri = inner[i];
+      facets.push({ d: `M${tip[0]},${tip[1]} L${li[0]},${li[1]} L${cx},${cy} Z`, fill: pairs[i][0] });
+      facets.push({ d: `M${tip[0]},${tip[1]} L${ri[0]},${ri[1]} L${cx},${cy} Z`, fill: pairs[i][1] });
+    }
+    const svg = `<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">${
+      facets.map(f => `<path d="${f.d}" fill="${f.fill}"/>`).join('')
+    }</svg>`;
+    document.getElementById('star').innerHTML = svg;
+  })();
+
+  // ============ Device detection ============
+  // POST-LAUNCH: replace these URLs with the live App Store / Play Store URLs.
+  // Pre-launch (today), all paths land on this same waitlist page.
+  const APP_STORE_URL  = ''; // e.g. 'https://apps.apple.com/app/lumenpoints/idXXXXXXXXX'
+  const PLAY_STORE_URL = ''; // e.g. 'https://play.google.com/store/apps/details?id=com.lumenpoints'
+
+  const ua = navigator.userAgent || '';
+  const isIOS     = /iPhone|iPad|iPod/i.test(ua);
+  const isAndroid = /Android/i.test(ua);
+  let device = 'Desktop';
+  if (isIOS) device = 'iOS';
+  else if (isAndroid) device = 'Android';
+
+  document.getElementById('device-input').value = device;
+
+  // Show device chip pre-launch (so visitor knows we know which platform they're on)
+  const chipWrap = document.getElementById('device-chip-wrap');
+  if (device === 'iOS') {
+    chipWrap.innerHTML = '<div class="device-chip">◇ iOS detected · TestFlight link incoming mid-May</div>';
+  } else if (device === 'Android') {
+    chipWrap.innerHTML = '<div class="device-chip">◇ Android detected · Play link incoming mid-May</div>';
+  }
+
+  // POST-LAUNCH redirect logic — uncomment when stores are live:
+  /*
+  if (isIOS && APP_STORE_URL)         location.replace(APP_STORE_URL);
+  else if (isAndroid && PLAY_STORE_URL) location.replace(PLAY_STORE_URL);
+  // Desktop falls through to the page (no redirect).
+  */
+
+  // ============ Form submit (graceful fallback if no Formspree yet) ============
+  const form = document.getElementById('waitlist-form');
+  const successEl = document.getElementById('success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async (e) => {
+    // If Formspree URL is still placeholder, intercept and just show success
+    // (so the form doesn't break before you've set up the backend)
+    if (form.action.includes('YOUR_FORMSPREE_ID')) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saved (locally) ✓';
+      // Stash in localStorage so you can review during testing
+      const emails = JSON.parse(localStorage.getItem('lp_waitlist') || '[]');
+      emails.push({ email: form.email.value, device, ts: Date.now() });
+      localStorage.setItem('lp_waitlist', JSON.stringify(emails));
+      successEl.classList.add('show');
+      console.log('[LumenPoints] Waitlist (local):', emails);
+      return;
+    }
+    // Real Formspree path — let it submit, but show success without page reload
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        successEl.classList.add('show');
+        submitBtn.textContent = 'Joined ✓';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Try again';
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Try again';
+    }
+  });
+</script>
+
+</body>
+</html>
