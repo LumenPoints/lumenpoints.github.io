@@ -495,7 +495,7 @@ function D3_Hero() {
       borderTop: `1px solid ${D3.rule}`,
       borderBottom: `1px solid ${D3.rule}`
     }
-  }, [['5', 'Dimensions tracked'], ['100', 'Founding memberships'], ['$349', 'Lifetime, one-time'], ['May 22', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['5', 'Dimensions tracked'], ['100', 'Founding memberships'], ['$349', 'Lifetime, one-time'], ['June 24', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '28px 24px',
@@ -1080,7 +1080,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store on May 22. iOS first — Android is on the roadmap.'], ['Set up account', 'Choose Individual or Partnered account. Premium accounts give full access to AI insights.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store on June 24. iOS first — Android is on the roadmap.'], ['Set up account', 'Choose Individual or Partnered account. Premium accounts give full access to AI insights.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
