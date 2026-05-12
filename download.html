@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>LumenPoints — Coming Mid-May</title>
+<title>LumenPoints — Coming End of June</title>
 <meta name="description" content="LumenPoints — every point of your health, illuminated. Join the waitlist for early access." />
-<meta property="og:title" content="LumenPoints — Coming Mid-May" />
+<meta property="og:title" content="LumenPoints — Coming End of June" />
 <meta property="og:description" content="One place. Every metric. Full clarity." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lumenpoints.com/download" />
@@ -287,7 +287,7 @@
 <!-- ============ NAV ============ -->
 <nav class="top">
   <a class="nav-mark" href="https://lumenpoints.com">Lumen<em>Points</em></a>
-  <div class="nav-meta"><span class="dot"></span>Coming Mid-May 2026</div>
+  <div class="nav-meta"><span class="dot"></span>Coming End of June 2026</div>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -308,7 +308,7 @@
     <div class="waitlist-card">
       <div id="device-chip-wrap"></div>
       <h3>Be first <em>to know.</em></h3>
-      <p class="sub">We launch on iOS in mid-May. Drop your email — we'll send the link the day it goes live.</p>
+      <p class="sub">We launch on iOS at the end of June. Drop your email — we'll send the link the day it goes live.</p>
 
       <form class="form" id="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
         <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
@@ -427,9 +427,8 @@
   else if (isAndroid) device = 'Android';
 
   document.getElementById('device-input').value = device;
-  const chipWrap = document.getElementById('device-chip-wrap');
-  if (device === 'iOS')          chipWrap.innerHTML = '<div class="device-chip">◇ iOS detected · TestFlight at launch</div>';
-  else if (device === 'Android') chipWrap.innerHTML = '<div class="device-chip">◇ Android · iOS-only at launch · web companion soon</div>';
+  // Device chip removed — keep the waitlist card clean. We still tag the form
+  // submission with the visitor's platform via the hidden #device-input above.
 
   // POST-LAUNCH redirect — uncomment when stores are live:
   /*
