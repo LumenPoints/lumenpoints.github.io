@@ -331,18 +331,18 @@ function D3_Hero() {
   }, "\u2726 Get The App"), /*#__PURE__*/React.createElement("h1", {
     style: {
       ...d3Styles.display,
-      fontSize: 140,
-      lineHeight: 0.96,
+      fontSize: 128,
+      lineHeight: 0.98,
       margin: 0,
       letterSpacing: '-0.02em',
       color: D3.cream
     }
-  }, "Illuminate", /*#__PURE__*/React.createElement("br", null), "every point", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+  }, "Every dimension", /*#__PURE__*/React.createElement("br", null), "of your wellness,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: 'italic',
       color: D3.gold
     }
-  }, "of your health.")), /*#__PURE__*/React.createElement("div", {
+  }, "in one app.")), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 48,
       maxWidth: 560,
@@ -352,21 +352,21 @@ function D3_Hero() {
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.display,
-      fontSize: 36,
+      fontSize: 32,
       fontStyle: 'italic',
       color: D3.gold,
-      lineHeight: 1.15,
+      lineHeight: 1.2,
       letterSpacing: '-0.01em',
       marginBottom: 24
     }
-  }, "\"What gets measured,", /*#__PURE__*/React.createElement("br", null), "gets managed.\""), /*#__PURE__*/React.createElement("div", {
+  }, "Every pattern, finally readable.", /*#__PURE__*/React.createElement("br", null), "Every piece of it, still yours."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 19,
       lineHeight: 1.65,
       color: 'rgba(237,230,214,0.82)'
     }
-  }, "LumenPoints unifies the five dimensions of your wellness into a single, legible system \u2014 so the work you're already doing becomes the signal you can actually read.")), /*#__PURE__*/React.createElement("div", {
+  }, "Your supplements, skincare, bloodwork, body, and mind \u2014 in one place where AI surfaces the patterns no single tool was built to see. Subscription only. Never sold, never shared, never used to train AI. The story your data's been trying to tell you, told only to you.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 16,
@@ -490,12 +490,12 @@ function D3_Hero() {
   }))))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
+      gridTemplateColumns: 'repeat(3, 1fr)',
       marginTop: 80,
       borderTop: `1px solid ${D3.rule}`,
       borderBottom: `1px solid ${D3.rule}`
     }
-  }, [['5', 'Dimensions tracked'], ['100', 'Founding memberships'], ['$349', 'Lifetime, one-time'], ['June 24', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['5', 'Dimensions tracked'], ['AI', 'Cross-pillar pattern detection'], ['June 24', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '28px 24px',
@@ -696,7 +696,7 @@ function D3_ForHer() {
       marginBottom: 16,
       letterSpacing: '0.22em'
     }
-  }, "\u2726 A Feature"), /*#__PURE__*/React.createElement("div", {
+  }, "\u2726 Coming Next"), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.display,
       fontSize: 42,
@@ -716,7 +716,7 @@ function D3_ForHer() {
       lineHeight: 1.6,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "LumenPoints is built for one person at a time. Partnered is for the couples who live this way together \u2014 two people, two accounts, one subscription."), /*#__PURE__*/React.createElement("div", {
+  }, "The next chapter of LumenPoints is for couples who live this way together \u2014 two people, two accounts, one membership."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 18,
@@ -724,7 +724,7 @@ function D3_ForHer() {
       color: 'rgba(237,230,214,0.86)',
       marginTop: 18
     }
-  }, "Each of you has your own private LumenPoints. Your bloodwork. Your stack. Your trends. Your mind. Nothing is shared by default, and nothing is merged."), /*#__PURE__*/React.createElement("div", {
+  }, "Each person keeps their own private LumenPoints. Bloodwork, stack, trends, mind \u2014 nothing shared by default, nothing merged."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 18,
@@ -732,7 +732,7 @@ function D3_ForHer() {
       color: 'rgba(237,230,214,0.86)',
       marginTop: 18
     }
-  }, "For couples who want to share specific parts of their picture \u2014 opt-in, per-Point, revocable \u2014 that's coming in our first major update, shaped by what Founding Members tell us they actually want to share."), /*#__PURE__*/React.createElement("div", {
+  }, "For the couples who want to share specific parts of their picture \u2014 opt-in, per-Point, revocable \u2014 that's coming in our first major update, shaped by what early users tell us they actually want to share."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 18,
@@ -741,7 +741,7 @@ function D3_ForHer() {
       fontStyle: 'italic',
       marginTop: 22
     }
-  }, "Until then: Track side by side. Separately, intentionally, and privately."))));
+  }, "Until then: track side by side. Separately, intentionally, and privately."))));
 }
 function D3_Dimension({
   n,
@@ -897,28 +897,47 @@ function D3_Founding() {
       marginBottom: 32,
       lineHeight: 1.4
     }
-  }, "\u2726 Founding", /*#__PURE__*/React.createElement("br", null), "Limited to One Hundred"), /*#__PURE__*/React.createElement("h2", {
+  }, "\u2726 Founding Users", /*#__PURE__*/React.createElement("br", null), "The First One Hundred"), /*#__PURE__*/React.createElement("h2", {
     style: {
       ...d3Styles.display,
-      fontSize: 108,
+      fontSize: 96,
       lineHeight: 0.98,
       margin: 0,
       letterSpacing: '-0.02em'
     }
-  }, "A quiet", /*#__PURE__*/React.createElement("br", null), "invitation", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+  }, "A quiet ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: 'italic',
       color: D3.gold
     }
-  }, "for the serious.")), /*#__PURE__*/React.createElement("div", {
+  }, "invitation"), /*#__PURE__*/React.createElement("br", null), "for the serious."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
-      fontSize: 20,
+      fontSize: 19,
+      lineHeight: 1.6,
       marginTop: 40,
-      maxWidth: 480,
-      color: 'rgba(237,230,214,0.82)'
+      maxWidth: 560,
+      color: 'rgba(237,230,214,0.86)'
     }
-  }, "Five lifetime benefits, one price, yours forever. Includes a second profile \u2014 partner, parent, or child. For the hundred founding members who want to be first.")), /*#__PURE__*/React.createElement("div", {
+  }, "The first hundred people who join LumenPoints aren't customers. They're the ones building this with us."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.body,
+      fontSize: 19,
+      lineHeight: 1.6,
+      marginTop: 20,
+      maxWidth: 560,
+      color: 'rgba(237,230,214,0.86)'
+    }
+  }, "Founding Users sign up during launch month and get something the next thousand won't: your rate, locked for life. First look at every new feature, before it ships. Monthly notes from the team behind the build. A direct channel to tell us what's working and what isn't. And a real voice in what gets built in the next year."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.body,
+      fontSize: 19,
+      lineHeight: 1.6,
+      marginTop: 20,
+      maxWidth: 560,
+      color: 'rgba(237,230,214,0.86)'
+    }
+  }, "No special tier. No upcharge. Just the $87.99/year subscription, locked at the founding rate, with a seat at the table that opens for a hundred people and then closes.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -930,23 +949,35 @@ function D3_Founding() {
       justifyContent: 'space-between',
       alignItems: 'baseline',
       borderBottom: `1px solid ${D3.rule}`,
-      paddingBottom: 20
+      paddingBottom: 20,
+      gap: 16
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.display,
-      fontSize: 72,
-      letterSpacing: '-0.02em'
+      fontSize: 60,
+      letterSpacing: '-0.02em',
+      lineHeight: 1
     }
-  }, "$349"), /*#__PURE__*/React.createElement("div", {
+  }, "$87.99", /*#__PURE__*/React.createElement("span", {
     style: {
-      ...d3Styles.mono
+      fontSize: 28,
+      color: 'rgba(237,230,214,0.7)',
+      fontStyle: 'italic'
     }
-  }, "One time \xB7 Lifetime")), /*#__PURE__*/React.createElement("div", {
+  }, " / year")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...d3Styles.mono,
+      fontSize: 11,
+      textAlign: 'right',
+      maxWidth: 160,
+      lineHeight: 1.6
+    }
+  }, "Locked for life", /*#__PURE__*/React.createElement("br", null), "as a Founding User")), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 24
     }
-  }, ['First access to new features, before public release', 'Full Premium, for life — every feature, every update', 'Partnered access — two accounts, one membership', 'Your feedback shapes what comes next', 'Direct founder support — me, not a help desk'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['Founding rate, locked forever', 'First access to every new feature', 'Monthly notes from the team', 'Direct channel to share what\u2019s working', 'Your voice in what gets built next'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
@@ -986,7 +1017,7 @@ function D3_Founding() {
       textDecoration: 'none',
       cursor: 'pointer'
     }
-  }, "Claim Founding Spot"))));
+  }, "Claim Founding User Status"))));
 }
 function D3_Wordmark() {
   return /*#__PURE__*/React.createElement("div", {
@@ -1080,7 +1111,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store on June 24. iOS first — Android is on the roadmap.'], ['Set up account', 'Choose Individual or Partnered account. Premium accounts give full access to AI insights.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store on June 24.'], ['Set up account', 'Create your account. Premium gives full access to AI insights and pattern detection.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
@@ -1313,7 +1344,7 @@ window.D3_Homepage = function D3_Homepage() {
     color: LP_COLORS.trends,
     image: "img/trends.jpg",
     title: "Your data. Your story. Translated.",
-    body: "Every data point becomes a line in someone's story. AI surfaces the patterns you'd never spot on your own \u2014 how his supplement timing shifted his sleep, why your recovery dipped in week three, what finally landed with your teenager. Visualized clearly. Interpreted intelligently."
+    body: "Every data point becomes a line in your story. AI surfaces the patterns you'd never spot on your own \u2014 how your supplement timing shifted your sleep, why your recovery dipped in week three, what finally helped your skin after eighteen months of trying things. Visualized clearly. Interpreted intelligently."
   }), /*#__PURE__*/React.createElement(D3_Setup, null), /*#__PURE__*/React.createElement(D3_Wordmark, null), /*#__PURE__*/React.createElement(D3_ForHer, null), /*#__PURE__*/React.createElement(D3_Founding, null), /*#__PURE__*/React.createElement(D3_Waitlist, null), /*#__PURE__*/React.createElement(D3_Footer, null));
 };
 
