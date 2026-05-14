@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "RZ2YS942X8.com.zoocrew.lumenpoints"
+        ],
+        "components": [
+          {
+            "/": "/auth/*",
+            "comment": "Matches all Supabase auth callback paths"
+          }
+        ]
+      }
+    ]
+  }
+}
