@@ -937,7 +937,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "No special tier. No upcharge. Just the $87.99/year subscription, locked at the founding rate, with a seat at the table that opens for a hundred people and then closes.")), /*#__PURE__*/React.createElement("div", {
+  }, "No special tier. No upcharge. Just the $89.99/year subscription, locked at the founding rate, with a seat at the table that opens for a hundred people and then closes.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -959,7 +959,7 @@ function D3_Founding() {
       letterSpacing: '-0.02em',
       lineHeight: 1
     }
-  }, "$87.99", /*#__PURE__*/React.createElement("span", {
+  }, "$89.99", /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 28,
       color: 'rgba(237,230,214,0.7)',
