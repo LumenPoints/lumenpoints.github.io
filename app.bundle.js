@@ -250,7 +250,7 @@ function D3_Nav() {
       textDecoration: 'none',
       cursor: 'pointer'
     }
-  }, "Founding"), /*#__PURE__*/React.createElement("a", {
+  }, "Membership"), /*#__PURE__*/React.createElement("a", {
     href: "#stories",
     style: {
       color: 'inherit',
@@ -495,7 +495,7 @@ function D3_Hero() {
       borderTop: `1px solid ${D3.rule}`,
       borderBottom: `1px solid ${D3.rule}`
     }
-  }, [['5', 'Dimensions tracked'], ['AI', 'Cross-pillar pattern detection'], ['June 24', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['5', 'Dimensions tracked'], ['AI', 'Cross-pillar pattern detection'], ['Soon', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '28px 24px',
@@ -897,7 +897,7 @@ function D3_Founding() {
       marginBottom: 32,
       lineHeight: 1.4
     }
-  }, "\u2726 Founding Users", /*#__PURE__*/React.createElement("br", null), "The First One Hundred"), /*#__PURE__*/React.createElement("h2", {
+  }, "\u2726 Early Members", /*#__PURE__*/React.createElement("br", null), "Build It With Us"), /*#__PURE__*/React.createElement("h2", {
     style: {
       ...d3Styles.display,
       fontSize: 96,
@@ -905,7 +905,7 @@ function D3_Founding() {
       margin: 0,
       letterSpacing: '-0.02em'
     }
-  }, "A quiet ", /*#__PURE__*/React.createElement("span", {
+  }, "An open ", /*#__PURE__*/React.createElement("span", {
     style: {
       fontStyle: 'italic',
       color: D3.gold
@@ -919,7 +919,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "The first hundred people who join LumenPoints aren't customers. They're the ones building this with us."), /*#__PURE__*/React.createElement("div", {
+  }, "The people who join LumenPoints early aren't just customers. They're the ones building this with us."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 19,
@@ -928,7 +928,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "Founding Users sign up during launch month and get something the next thousand won't: your rate, locked for life. First look at every new feature, before it ships. Monthly notes from the team behind the build. A direct channel to tell us what's working and what isn't. And a real voice in what gets built in the next year."), /*#__PURE__*/React.createElement("div", {
+  }, "Join early and you get something later members won't: your rate, locked for life. First look at every new feature, before it ships. Monthly notes from the team behind the build. A direct channel to tell us what's working and what isn't. And a real voice in what gets built in the next year."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 19,
@@ -937,7 +937,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "No special tier. No upcharge. Just the $89.99/year subscription, locked at the founding rate, with a seat at the table that opens for a hundred people and then closes.")), /*#__PURE__*/React.createElement("div", {
+  }, "No special tier. No upcharge. Just the $89.99/year subscription, locked at the early rate, with a seat at the table for everyone who joins us early.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -973,11 +973,11 @@ function D3_Founding() {
       maxWidth: 160,
       lineHeight: 1.6
     }
-  }, "Locked for life", /*#__PURE__*/React.createElement("br", null), "as a Founding User")), /*#__PURE__*/React.createElement("div", {
+  }, "Locked for life", /*#__PURE__*/React.createElement("br", null), "at the early rate")), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 24
     }
-  }, ['Founding rate, locked forever', 'First access to every new feature', 'Monthly notes from the team', 'Direct channel to share what\u2019s working', 'Your voice in what gets built next'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['Your rate, locked forever', 'First access to every new feature', 'Monthly notes from the team', 'Direct channel to share what\u2019s working', 'Your voice in what gets built next'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
@@ -1017,7 +1017,7 @@ function D3_Founding() {
       textDecoration: 'none',
       cursor: 'pointer'
     }
-  }, "Claim Founding User Status"))));
+  }, "Reserve Your Rate"))));
 }
 function D3_Wordmark() {
   return /*#__PURE__*/React.createElement("div", {
@@ -1111,7 +1111,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store on June 24.'], ['Set up account', 'Create your account. Premium gives full access to AI insights and pattern detection.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store at launch.'], ['Set up account', 'Create your account. Premium gives full access to AI insights and pattern detection.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
