@@ -928,7 +928,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "Join early and you get something later members won't: your rate, locked for life. First look at every new feature, before it ships. Monthly notes from the team behind the build. A direct channel to tell us what's working and what isn't. And a real voice in what gets built in the next year."), /*#__PURE__*/React.createElement("div", {
+  }, "One membership unlocks every dimension \u2014 Body, Skin, Mind, Blood, and Trends \u2014 with AI that reads the patterns across all of them. Upload bloodwork, log your stack, sync Apple Health, and let LumenPoints do the connecting."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 19,
@@ -937,7 +937,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "No special tier. No upcharge. Just the $89.99/year subscription, locked at the early rate, with a seat at the table for everyone who joins us early.")), /*#__PURE__*/React.createElement("div", {
+  }, "No upcharges. No data ever sold, shared, or used to train AI. One subscription \u2014 $89.99 a year, or $9.99 a month \u2014 for your whole picture, kept entirely yours.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -965,19 +965,11 @@ function D3_Founding() {
       color: 'rgba(237,230,214,0.7)',
       fontStyle: 'italic'
     }
-  }, " / year")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      ...d3Styles.mono,
-      fontSize: 11,
-      textAlign: 'right',
-      maxWidth: 160,
-      lineHeight: 1.6
-    }
-  }, "Locked for life", /*#__PURE__*/React.createElement("br", null), "at the early rate")), /*#__PURE__*/React.createElement("div", {
+  }, " / year"))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 24
     }
-  }, ['Your rate, locked forever', 'First access to every new feature', 'Monthly notes from the team', 'Direct channel to share what\u2019s working', 'Your voice in what gets built next'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['All five Points in one place', 'AI cross-pillar pattern detection', 'Bloodwork upload & analysis', 'Apple Health sync', 'Private by default \u2014 never sold or shared'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
