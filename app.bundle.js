@@ -495,7 +495,7 @@ function D3_Hero() {
       borderTop: `1px solid ${D3.rule}`,
       borderBottom: `1px solid ${D3.rule}`
     }
-  }, [['5', 'Dimensions tracked'], ['AI', 'Cross-pillar pattern detection'], ['Soon', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['5', 'Dimensions tracked'], ['AI', 'Cross-pillar observations'], ['Soon', 'iOS launch']].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '28px 24px',
@@ -897,7 +897,7 @@ function D3_Founding() {
       marginBottom: 32,
       lineHeight: 1.4
     }
-  }, "\u2726 Early Members", /*#__PURE__*/React.createElement("br", null), "Build It With Us"), /*#__PURE__*/React.createElement("h2", {
+  }, "\u2726 LumenPoints Premium", /*#__PURE__*/React.createElement("br", null), "One membership, every Point"), /*#__PURE__*/React.createElement("h2", {
     style: {
       ...d3Styles.display,
       fontSize: 96,
@@ -919,7 +919,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "The people who join LumenPoints early aren't just customers. They're the ones building this with us."), /*#__PURE__*/React.createElement("div", {
+  }, "The people who use LumenPoints aren't just customers. They're the ones we build it for."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 19,
@@ -928,7 +928,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "One membership unlocks every dimension \u2014 Body, Skin, Mind, Blood, and Trends \u2014 with AI that reads the patterns across all of them. Upload bloodwork, log your stack, sync Apple Health, and let LumenPoints do the connecting."), /*#__PURE__*/React.createElement("div", {
+  }, "One membership unlocks every dimension \u2014 Body, Skin, Mind, Blood, and Trends \u2014 with AI that surfaces observations across all of them. Upload bloodwork, log your stack, sync Apple Health, and let LumenPoints do the connecting."), /*#__PURE__*/React.createElement("div", {
     style: {
       ...d3Styles.body,
       fontSize: 19,
@@ -937,7 +937,7 @@ function D3_Founding() {
       maxWidth: 560,
       color: 'rgba(237,230,214,0.86)'
     }
-  }, "No upcharges. No data ever sold, shared, or used to train AI. One subscription \u2014 $89.99 a year, or $9.99 a month \u2014 for your whole picture, kept entirely yours.")), /*#__PURE__*/React.createElement("div", {
+  }, "No upcharges. No data ever sold, shared, or used to train AI. At launch, one subscription \u2014 $89.99 a year, or $9.99 a month \u2014 for your whole picture, kept entirely yours.")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 40,
       border: `1px solid ${D3.rule}`,
@@ -969,7 +969,7 @@ function D3_Founding() {
     style: {
       marginTop: 24
     }
-  }, ['All five Points in one place', 'AI cross-pillar pattern detection', 'Bloodwork upload & analysis', 'Apple Health sync', 'Private by default \u2014 never sold or shared'].map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, ['All five Points in one place', 'AI observations across all five Points', 'Bloodwork upload & analysis', 'Apple Health sync', 'Private by default \u2014 never sold or shared'].map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       display: 'flex',
@@ -1009,7 +1009,7 @@ function D3_Founding() {
       textDecoration: 'none',
       cursor: 'pointer'
     }
-  }, "Reserve Your Rate"))));
+  }, "Join the Waitlist"))));
 }
 function D3_Wordmark() {
   return /*#__PURE__*/React.createElement("div", {
@@ -1103,7 +1103,7 @@ function D3_Setup() {
       gridTemplateColumns: '1fr 1fr 1fr',
       gap: 0
     }
-  }, [['Download', 'Get LumenPoints from the App Store at launch.'], ['Set up account', 'Create your account. Premium gives full access to AI insights and pattern detection.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['Download', 'Get LumenPoints from the App Store at launch.'], ['Set up account', 'Create your account. Premium gives full access to AI insights and observations.'], ['Start tracking', 'Log supplements, routines, and metrics. Upload bloodwork. Connect Apple Health. Enable custom notifications for every Point — a reminder for the morning stack, a check-in after labs, a nudge when the mind needs it. Then let LumenPoints do the connecting.']].map(([t, b], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '0 36px',
