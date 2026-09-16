@@ -1,0 +1,16 @@
+<svg width="680" height="680" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="680" fill="#1A2E24" rx="48"></rect>
+  <g transform="translate(340, 325)">
+    <polygon points="0,-185 43.6,-60 175,-60 72,22.8 108,148 0,68 -108,148 -72,22.8 -175,-60 -43.6,-60" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round"></polygon>
+    <circle cx="0" cy="-185" r="18" fill="#2C7537"></circle>
+    <circle cx="175" cy="-60" r="18" fill="#606060"></circle>
+    <circle cx="108" cy="148" r="18" fill="#BE6D59"></circle>
+    <circle cx="-108" cy="148" r="18" fill="#553E8D"></circle>
+    <circle cx="-175" cy="-60" r="18" fill="#224837"></circle>
+    <path d="M0,-52 C-22,-22 -34,4 -34,20 C-34,38.8 -18.8,54 0,54 C18.8,54 34,38.8 34,20 C34,4 22,-22 0,-52 Z" fill="#BE6D59"></path>
+    <ellipse cx="-10" cy="8" rx="7" ry="10" fill="#D4896F" opacity="0.5"></ellipse>
+  </g>
+  <text x="340" y="582" text-anchor="middle" font-family="Georgia, serif" fill="#F5F0EA" letter-spacing="10">
+    <tspan font-size="46" font-weight="400">L</tspan><tspan font-size="36" font-weight="400">UMEN</tspan><tspan font-size="46" font-weight="700" fill="#BE6D59">P</tspan><tspan font-size="36" font-weight="700" fill="#BE6D59">OINTS</tspan>
+  </text>
+</svg>

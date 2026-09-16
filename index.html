@@ -1,27 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LumenPoints — Every point of your health, illuminated.</title>
-<link rel="icon" href="assets/favicon.png">
 <meta name="description" content="Every point of your health, illuminated. Supplements, body, blood, skin, and mind — tracked in one app.">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/lumenpoints-design-system-019e190f-6523-73f5-82e2-dca513deb5d0/colors_and_type.css">
-  <script src="_ds/lumenpoints-design-system-019e190f-6523-73f5-82e2-dca513deb5d0/_ds_bundle.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Outfit:wght@300;400;500;600&amp;display=swap">
-  <style>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Outfit:wght@300;400;500;600&amp;display=swap">
+<style>
+/* ============================================================================
+   LumenPoints — Colors & Type
+   Single source of truth for design tokens.
+   Reference: README.md (Visual Foundations section)
+   ============================================================================ */
+
+/* ---------- Fonts ---------- */
+
+/* Editorial serif used for marketing headlines + accent words.
+   Brand canon lists "Lora italic for names"; canonical TTF not yet supplied.
+   Falling back to Google Fonts Lora (open-source, weight-matched). */
+
+:root {
+  /* ---------- Brand Core ---------- */
+  --lp-cream:        #FDFAF6;  /* canonical warm cream — app + cards bg */
+  --lp-cream-2:      #F6F1E9;  /* slightly deeper cream — alt surface */
+  --lp-ink:          #2C2C2A;  /* near-black warm ink — primary text */
+  --lp-ink-soft:     #4A4844;  /* secondary text */
+  --lp-ink-mute:     #807C75;  /* tertiary / captions */
+  --lp-rule:         #E8E1D5;  /* warm hairlines + dividers */
+  --lp-rule-strong:  #D5CBB8;
+
+  /* ---------- PRIMARY ACTION (canonical from app screens) ----------
+     The PRIMARY action color in the iOS app is forest green, NOT terracotta.
+     Settings header tint, primary CTAs, segmented controls, and toggles all
+     use --lp-forest. Terracotta is reserved for the Blood pillar + the
+     wordmark italic accent + low-emphasis warmth. */
+  --lp-forest:       #3F7160;  /* PRIMARY: header tint, CTA, toggles */
+  --lp-forest-deep:  #2F5B4B;  /* press / hover */
+  --lp-forest-soft:  #DDE7E1;  /* tint surface (e.g. selected chip bg) */
+
+  --lp-terracotta:        #BE6D59;  /* accent · Blood pillar · "Points" wordmark */
+  --lp-terracotta-deep:   #9F5747;
+  --lp-terracotta-tint:   #F2DDD3;
+  --lp-gold:              #C9A978;  /* italic display accent — "foundation." */
+  --lp-gold-soft:         #D9C28F;
+  --lp-gold-muted:        #9C8A66;  /* secondary link / eyebrow on dark */
+
+  /* ---------- Five Pillars (canonical order from app + marketing site) ----------
+     Note: there is NO "Supplements" pillar. The stack is a feature inside Body/Trends.
+     The canonical five are Trends · Body · Blood · Skin · Mind, arranged with
+     BLOOD as the centerpiece (star+drop mark) and the other four as compass points. */
+  --lp-trends:      #B8C9A6;  /* light sage     — N (top) */
+  --lp-body:        #9A9692;  /* warm gray      — E (right) */
+  --lp-blood:       #C5725C;  /* terracotta     — CENTER (star+drop) */
+  --lp-skin:        #9B7FA0;  /* muted lavender — S (bottom) */
+  --lp-mind:        #5F8C80;  /* teal-forest    — W (left) */
+
+  --lp-trends-tint: #E4ECDC;
+  --lp-body-tint:   #E5E3E0;
+  --lp-blood-tint:  #F2DDD3;
+  --lp-skin-tint:   #E5DCE7;
+  --lp-mind-tint:   #D4E0DC;
+
+  /* ---------- Dark surfaces ----------
+     Two distinct dark modes:
+     - night:    marketing site — cool charcoal-forest (#161C19 family)
+     - onboard:  iOS onboarding/splash — warmer brown-charcoal (#2A211C family) */
+  --lp-night:        #161C19;  /* marketing hero (lumenpoints.com) */
+  --lp-night-2:      #1E2623;
+  --lp-night-rule:   #2E3631;
+  --lp-on-night:     #EDE6D6;  /* warm cream on cool dark */
+  --lp-on-night-mute:#9C9A92;
+
+  --lp-onboard:        #2A211C;  /* iOS onboarding/splash — warm brown-charcoal */
+  --lp-onboard-2:      #322821;
+  --lp-onboard-rule:   #3D3128;
+  --lp-on-onboard:     #F2EADA;  /* warm cream — "Bloodwork is the" body */
+  --lp-on-onboard-mute:#8A8175;
+
+  /* ---------- Semantic status ---------- */
+  --lp-good:    #2C7537;  /* in healthy range */
+  --lp-watch:   #C9A86A;  /* amber-gold        */
+  --lp-flag:    #B14A3A;  /* elevated / flagged */
+
+  /* ---------- Type families ----------
+     Two-track type system:
+     - App (iOS):  Jost for sans UI (TTFs supplied in fonts/)
+     - Marketing:  Instrument Sans for body, Cormorant Garamond for display italic
+     Both surfaces use Cormorant for italic display accents ("foundation.")
+     and JetBrains Mono for eyebrows / data callouts. */
+  --lp-sans:           "Jost", "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* @kind font */
+  --lp-sans-marketing: "Instrument Sans", "Jost", system-ui, -apple-system, sans-serif;  /* @kind font */
+  --lp-serif:          "Cormorant Garamond", "Lora", "Iowan Old Style", Georgia, serif;  /* @kind font */
+  --lp-mono:           "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;  /* @kind font */
+
+  /* ---------- Type scale (mobile-first, app + marketing) ---------- */
+  --lp-fs-display:   56px;   /* marketing hero */
+  --lp-fs-h1:        34px;
+  --lp-fs-h2:        26px;
+  --lp-fs-h3:        20px;
+  --lp-fs-body-lg:   17px;   /* iOS default body */
+  --lp-fs-body:      15px;
+  --lp-fs-sm:        13px;
+  --lp-fs-xs:        11px;
+  --lp-fs-eyebrow:   12px;   /* tracked uppercase */
+
+  --lp-lh-display:   1.04;  /* @kind other */
+  --lp-lh-tight:     1.18;  /* @kind other */
+  --lp-lh-snug:      1.32;  /* @kind other */
+  --lp-lh-body:      1.5;  /* @kind other */
+  --lp-lh-loose:     1.7;  /* @kind other */
+
+  --lp-tracking-tight:    -0.01em;
+  --lp-tracking-normal:    0em;
+  --lp-tracking-wide:      0.04em;
+  --lp-tracking-eyebrow:   0.18em;  /* "+ FOUNDING ACCESS · MAY 10" */
+
+  /* ---------- Spacing (4-pt scale) ---------- */
+  --lp-s-1:  4px;
+  --lp-s-2:  8px;
+  --lp-s-3:  12px;
+  --lp-s-4:  16px;
+  --lp-s-5:  20px;
+  --lp-s-6:  24px;
+  --lp-s-8:  32px;
+  --lp-s-10: 40px;
+  --lp-s-12: 48px;
+  --lp-s-16: 64px;
+  --lp-s-20: 80px;
+
+  /* ---------- Radii ---------- */
+  --lp-r-xs:  4px;
+  --lp-r-sm:  8px;
+  --lp-r-md:  12px;   /* default chip / field */
+  --lp-r-lg:  16px;   /* default card */
+  --lp-r-xl:  22px;   /* large surface */
+  --lp-r-2xl: 28px;   /* iOS sheet / hero card */
+  --lp-r-pill: 999px;
+
+  /* ---------- Shadows (warm, low-contrast) ---------- */
+  --lp-shadow-1: 0 1px 2px rgba(44, 44, 42, 0.04), 0 1px 1px rgba(44, 44, 42, 0.03);
+  --lp-shadow-2: 0 2px 6px rgba(44, 44, 42, 0.05), 0 4px 14px rgba(44, 44, 42, 0.04);
+  --lp-shadow-3: 0 8px 24px rgba(44, 44, 42, 0.08), 0 2px 6px rgba(44, 44, 42, 0.04);
+  --lp-shadow-glow-blood: 0 0 24px rgba(190, 109, 89, 0.28);
+
+  /* ---------- Motion ---------- */
+  --lp-ease:       cubic-bezier(0.32, 0.72, 0.32, 1);   /* @kind other */
+  --lp-ease-out:   cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */
+  --lp-dur-fast:   140ms;  /* @kind other */
+  --lp-dur:        220ms;  /* @kind other */
+  --lp-dur-slow:   420ms;  /* @kind other */
+}
+
+/* ============================================================================
+   Semantic element styles — opt in with .lp class
+   ============================================================================ */
+
+.lp { color: var(--lp-ink); background: var(--lp-cream); font-family: var(--lp-sans); }
+.lp, .lp p, .lp li { font-size: var(--lp-fs-body); line-height: var(--lp-lh-body); }
+
+.lp h1, .lp-h1 {
+  font-family: var(--lp-serif);
+  font-weight: 500;
+  font-size: var(--lp-fs-h1);
+  line-height: var(--lp-lh-tight);
+  letter-spacing: var(--lp-tracking-tight);
+  color: var(--lp-ink);
+  margin: 0;
+}
+.lp h2, .lp-h2 {
+  font-family: var(--lp-serif);
+  font-weight: 500;
+  font-size: var(--lp-fs-h2);
+  line-height: var(--lp-lh-snug);
+  letter-spacing: var(--lp-tracking-tight);
+  color: var(--lp-ink);
+  margin: 0;
+}
+.lp h3, .lp-h3 {
+  font-family: var(--lp-sans);
+  font-weight: 600;
+  font-size: var(--lp-fs-h3);
+  line-height: var(--lp-lh-snug);
+  color: var(--lp-ink);
+  margin: 0;
+}
+
+.lp-display {
+  font-family: var(--lp-serif);
+  font-weight: 500;
+  font-size: var(--lp-fs-display);
+  line-height: var(--lp-lh-display);
+  letter-spacing: var(--lp-tracking-tight);
+}
+.lp-display em, .lp-italic-accent {
+  font-style: italic;
+  color: var(--lp-gold);
+  font-weight: 500;
+}
+
+.lp-eyebrow {
+  font-family: var(--lp-mono);
+  font-weight: 500;
+  font-size: var(--lp-fs-eyebrow);
+  letter-spacing: var(--lp-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--lp-gold-muted);
+}
+
+/* ============================================================================
+   Surface modes — opt in by adding the class to a wrapper.
+   ============================================================================ */
+
+/* Default .lp = cream app surface (already declared above). */
+
+.lp-on-onboard {
+  background: var(--lp-onboard);
+  color: var(--lp-on-onboard);
+}
+.lp-on-onboard .lp-eyebrow { color: var(--lp-gold-muted); }
+.lp-on-onboard .lp-display em { color: var(--lp-gold); }
+
+.lp-on-night {
+  background: var(--lp-night);
+  color: var(--lp-on-night);
+}
+.lp-on-night .lp-eyebrow { color: var(--lp-gold-muted); }
+
+/* Primary CTA: forest-green pill on cream; cream pill on dark. */
+.lp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: var(--lp-r-pill);
+  background: var(--lp-forest);
+  color: var(--lp-cream);
+  font-family: var(--lp-sans);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 0;
+  transition: background var(--lp-dur) var(--lp-ease);
+}
+.lp-btn-primary:hover { background: var(--lp-forest-deep); }
+
+.lp-on-onboard .lp-btn-primary,
+.lp-on-night .lp-btn-primary {
+  background: var(--lp-on-onboard);
+  color: var(--lp-ink);
+}
+
+.lp-pullquote {
+  font-family: var(--lp-serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--lp-on-night-mute);
+}
+
+.lp-mono   { font-family: var(--lp-mono); font-size: var(--lp-fs-sm); }
+.lp-mute   { color: var(--lp-ink-mute); }
+.lp-soft   { color: var(--lp-ink-soft); }
+
+/* Wordmark recreation — Jost, small-caps treatment via OpenType */
+.lp-wordmark {
+  font-family: var(--lp-sans);
+  font-feature-settings: "smcp" 1, "c2sc" 1;  /* small caps for both */
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.lp-wordmark .lumen  { font-weight: 300; color: var(--lp-ink); }
+.lp-wordmark .points { font-weight: 700; color: var(--lp-terracotta); }
+.lp-wordmark.on-dark .lumen { color: var(--lp-on-night); }
+
+
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #F8F1E3; font-family: "Outfit", system-ui, sans-serif; color: #1A1A1A; }
     a { color: #3A2E24; text-decoration: none; transition: color 220ms cubic-bezier(0.32,0.72,0.32,1); }
     a:hover { color: #9C8A66; }
     input::placeholder { color: #807C75; }
-  </style>
-</helmet>
+  
+.h1:hover{background:#1C1A17;color:#F8F1E3}
+.h2:hover{color:#D9C28F}
+.h3:hover{color:#F8F1E3}
+</style>
+</head>
+<body>
 <div style="min-width:320px">
   <nav data-screen-label="Nav" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,56px);background:rgba(248,241,227,0.88);backdrop-filter:blur(20px);border-bottom:1px solid #E1D3B4">
     <a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/logo-pack/Wordmark-Transparent-1800.png" alt="LumenPoints" style="height:84px;display:block"></a>
@@ -31,7 +296,7 @@
       <a href="#premium">Premium</a>
       <a href="#faq">FAQ</a>
       <a href="support.html">Support</a>
-      <a href="#waitlist" style="display:inline-flex;align-items:center;white-space:nowrap;padding:12px 22px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:11px;font-weight:600;letter-spacing:0.18em" style-hover="background:#1C1A17;color:#F8F1E3">Join the Waitlist</a>
+      <a href="#waitlist" style="display:inline-flex;align-items:center;white-space:nowrap;padding:12px 22px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:11px;font-weight:600;letter-spacing:0.18em" class="h1">Join the Waitlist</a>
     </div>
   </nav>
 
@@ -42,8 +307,8 @@
       <p style="margin:0;font-size:19px;font-weight:300;line-height:1.65;color:#1A1A1A;max-width:50ch">Supplements, body, blood, skin, and mind — tracked in one app, with AI observations across all five.</p>
       <div style="display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:500;letter-spacing:0.01em;color:#3A2E24;border-top:1px solid #CBB88E;border-bottom:1px solid #CBB88E;padding:14px 0;align-self:flex-start">Never sold, never shared, never used to train AI.</div>
       <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
-        <a href="#waitlist" style="display:inline-flex;align-items:center;padding:17px 40px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase" style-hover="background:#1C1A17;color:#F8F1E3">Join the Waitlist</a>
-        <div style="font-size:13px;font-weight:300;letter-spacing:0.02em;color:#807C75">{{ heroMicro }}</div>
+        <a href="#waitlist" style="display:inline-flex;align-items:center;padding:17px 40px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase" class="h1">Join the Waitlist</a>
+        <div style="font-size:13px;font-weight:300;letter-spacing:0.02em;color:#807C75">iPhone. Coming to the App Store, late summer 2026.</div>
       </div>
     </div>
     <div style="display:flex;justify-content:center;align-self:end">
@@ -204,7 +469,7 @@
           <p style="margin:0;padding:20px 0;border-top:1px solid rgba(201,169,120,0.35);font-size:16px;font-weight:300;line-height:1.6;color:#F8F1E3">We do not share your data with third parties for marketing or analytics.</p>
           <p style="margin:0;padding:20px 0;border-top:1px solid rgba(201,169,120,0.35);border-bottom:1px solid rgba(201,169,120,0.35);font-size:16px;font-weight:300;line-height:1.6;color:#F8F1E3">Delete your account from inside the app and your data goes with it.</p>
         </div>
-        <a href="privacy/" style="color:#C9A978;font-size:15px;font-weight:500;letter-spacing:0.04em" style-hover="color:#D9C28F">Read the full Privacy Policy →</a>
+        <a href="privacy/" style="color:#C9A978;font-size:15px;font-weight:500;letter-spacing:0.04em" class="h2">Read the full Privacy Policy →</a>
       </div>
       <div style="display:flex;justify-content:center">
         <img src="assets/logo-pack/Compass-Transparent-800px.png" alt="The five Points arranged as a compass" style="width:100%;max-width:380px;display:block">
@@ -217,24 +482,55 @@
     <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4.4vw,54px);color:#1A1A1A">One membership, <em style="font-style:italic;color:#C9A978">every Point.</em></h2>
     <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A;max-width:52ch">LumenPoints will be available as a subscription. Join the waitlist and we'll share the details when it's on the App Store.</p>
     <div style="display:flex;justify-content:center;border-top:1px solid #CBB88E;border-bottom:1px solid #CBB88E;padding:48px 64px;margin-top:8px;width:100%;box-sizing:border-box">
-      <a href="#waitlist" style="display:inline-flex;align-items:center;padding:17px 40px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase" style-hover="background:#1C1A17;color:#F8F1E3">Join the Waitlist</a>
+      <a href="#waitlist" style="display:inline-flex;align-items:center;padding:17px 40px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase" class="h1">Join the Waitlist</a>
     </div>
   </section>
 
   <section id="faq" data-screen-label="FAQ" style="max-width:780px;margin:0 auto;padding:0 56px 112px;display:flex;flex-direction:column;gap:44px">
     <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(34px,3.8vw,46px);color:#1A1A1A">Questions, <em style="font-style:italic;color:#C9A978">answered.</em></h2>
     <div style="display:flex;flex-direction:column">
-      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-        <div style="border-top:1px solid #E1D3B4">
-          <button onClick="{{ f.toggle }}" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
-            <span style="font-size:18px;font-weight:400;color:#1A1A1A">{{ f.q }}</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">{{ f.mark }}</span>
+      <div style="border-top:1px solid #E1D3B4">
+          <button class="faq-btn" data-i="0" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">Is this a medical app?</span>
+            <span class="faq-mark" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">+</span>
           </button>
-          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
-            <p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">{{ f.a }}</p>
-          </sc-if>
+          <div class="faq-a" data-i="0" style="display:none"><p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">No. LumenPoints is a wellness tracker. It does not diagnose, treat, or provide medical advice, and nothing in it replaces a conversation with your physician.</p></div>
         </div>
-      </sc-for>
+        <div style="border-top:1px solid #E1D3B4">
+          <button class="faq-btn" data-i="1" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">What does the AI actually do?</span>
+            <span class="faq-mark" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">+</span>
+          </button>
+          <div class="faq-a" data-i="1" style="display:none"><p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">It reads what you have logged and writes educational observations across your Points — for example, noting which items in your stack relate to markers you track. It does not interpret your labs or tell you what to do.</p></div>
+        </div>
+        <div style="border-top:1px solid #E1D3B4">
+          <button class="faq-btn" data-i="2" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">Where do the green, amber, and red colors come from?</span>
+            <span class="faq-mark" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">+</span>
+          </button>
+          <div class="faq-a" data-i="2" style="display:none"><p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">From your lab's own printed reference range for that marker, not from us. The color tells you whether a value sits inside the range your lab published. It is informational, not diagnostic.</p></div>
+        </div>
+        <div style="border-top:1px solid #E1D3B4">
+          <button class="faq-btn" data-i="3" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">Can I upload old bloodwork?</span>
+            <span class="faq-mark" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">+</span>
+          </button>
+          <div class="faq-a" data-i="3" style="display:none"><p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">Yes. Any lab, any year, PDF or photo. Older panels make your trends more useful.</p></div>
+        </div>
+        <div style="border-top:1px solid #E1D3B4">
+          <button class="faq-btn" data-i="4" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">Is my data used to train AI?</span>
+            <span class="faq-mark" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">+</span>
+          </button>
+          <div class="faq-a" data-i="4" style="display:none"><p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">No. Never sold, never shared, never used to train AI.</p></div>
+        </div>
+        <div style="border-top:1px solid #E1D3B4">
+          <button class="faq-btn" data-i="5" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">Is there an Android version?</span>
+            <span class="faq-mark" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">+</span>
+          </button>
+          <div class="faq-a" data-i="5" style="display:none"><p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">Not yet. LumenPoints is iPhone-only at launch. Join the waitlist and we will let you know if that changes.</p></div>
+        </div>
     </div>
   </section>
 
@@ -243,15 +539,11 @@
       <img src="assets/logo-pack/StarMark-Transparent-200px.png" alt="" style="width:40px;height:40px;object-fit:contain">
       <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4.4vw,54px);color:#1A1A1A">Be among the <em style="font-style:italic;color:#C9A978">first to know.</em></h2>
       <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A">Join the waitlist and we'll email you the day LumenPoints is on the App Store. One email. No spam, no sharing, ever.</p>
-      <sc-if value="{{ notJoined }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex;gap:12px;width:100%;max-width:500px;margin-top:8px">
-          <input type="email" placeholder="Your email address" value="{{ email }}" onChange="{{ setEmail }}" style="flex:1;padding:17px 24px;border-radius:999px;border:1px solid #CBB88E;background:#FFFFFF;font-family:'Outfit',sans-serif;font-size:16px;font-weight:300;color:#1A1A1A;outline:none">
-          <button onClick="{{ join }}" style="padding:17px 32px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:0;cursor:pointer;white-space:nowrap">Join the Waitlist</button>
-        </div>
-      </sc-if>
-      <sc-if value="{{ joined }}" hint-placeholder-val="{{ false }}">
-        <p style="margin:8px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:#3A2E24">You're on the list. We'll email you the day LumenPoints is live — one email, nothing else.</p>
-      </sc-if>
+      <div id="wl-form" style="display:flex;gap:12px;width:100%;max-width:500px;margin-top:8px">
+        <input id="wl-email" type="email" placeholder="Your email address" style="flex:1;padding:17px 24px;border-radius:999px;border:1px solid #CBB88E;background:#FFFFFF;font-family:'Outfit',sans-serif;font-size:16px;font-weight:300;color:#1A1A1A;outline:none">
+        <button id="wl-join" style="padding:17px 32px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:0;cursor:pointer;white-space:nowrap">Join the Waitlist</button>
+      </div>
+      <p id="wl-done" style="display:none;margin:8px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:#3A2E24">You're on the list. We'll email you the day LumenPoints is live — one email, nothing else.</p>
     </div>
   </section>
 
@@ -265,12 +557,12 @@
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid rgba(201,169,120,0.35);padding-top:32px;font-size:14px;font-weight:300;color:rgba(248,241,227,0.82)">
         <div style="display:flex;flex-direction:column;gap:6px">
           <span>LumenPoints, LLC</span>
-          <a href="mailto:support@lumenpoints.com" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">support@lumenpoints.com</a>
+          <a href="mailto:support@lumenpoints.com" style="color:rgba(248,241,227,0.82)" class="h3">support@lumenpoints.com</a>
         </div>
         <div style="display:flex;gap:24px;align-items:flex-start">
-          <a href="privacy/" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">Privacy Policy</a>
-          <a href="terms/" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">Terms of Service</a>
-          <a href="support.html" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">Support</a>
+          <a href="privacy/" style="color:rgba(248,241,227,0.82)" class="h3">Privacy Policy</a>
+          <a href="terms/" style="color:rgba(248,241,227,0.82)" class="h3">Terms of Service</a>
+          <a href="support.html" style="color:rgba(248,241,227,0.82)" class="h3">Support</a>
           <span>Instagram @LumenPoints</span>
         </div>
       </div>
@@ -278,35 +570,23 @@
     </div>
   </footer>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { open: -1, email: "", joined: false };
-  renderVals() {
-    const faqsData = [
-      ["Is this a medical app?", "No. LumenPoints is a wellness tracker. It does not diagnose, treat, or provide medical advice, and nothing in it replaces a conversation with your physician."],
-      ["What does the AI actually do?", "It reads what you have logged and writes educational observations across your Points — for example, noting which items in your stack relate to markers you track. It does not interpret your labs or tell you what to do."],
-      ["Where do the green, amber, and red colors come from?", "From your lab's own printed reference range for that marker, not from us. The color tells you whether a value sits inside the range your lab published. It is informational, not diagnostic."],
-      ["Can I upload old bloodwork?", "Yes. Any lab, any year, PDF or photo. Older panels make your trends more useful."],
-      ["Is my data used to train AI?", "No. Never sold, never shared, never used to train AI."],
-      ["Is there an Android version?", "Not yet. LumenPoints is iPhone-only at launch. Join the waitlist and we will let you know if that changes."],
-    ];
-    return {
-      heroMicro: "iPhone. Coming to the App Store, late summer 2026.",
-      faqs: faqsData.map(([q, a], i) => ({
-        q, a,
-        open: this.state.open === i,
-        mark: this.state.open === i ? "−" : "+",
-        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
-      })),
-      email: this.state.email,
-      setEmail: (e) => this.setState({ email: e.target.value }),
-      joined: this.state.joined,
-      notJoined: !this.state.joined,
-      join: () => { if (this.state.email.includes("@")) this.setState({ joined: true }); },
-    };
-  }
-}
+<script>
+document.querySelectorAll('.faq-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var i = btn.getAttribute('data-i');
+    var panel = document.querySelector('.faq-a[data-i="' + i + '"]');
+    var open = panel.style.display !== 'none';
+    document.querySelectorAll('.faq-a').forEach(function (p) { p.style.display = 'none'; });
+    document.querySelectorAll('.faq-mark').forEach(function (m) { m.textContent = '+'; });
+    if (!open) { panel.style.display = 'block'; btn.querySelector('.faq-mark').textContent = '\u2212'; }
+  });
+});
+var j = document.getElementById('wl-join');
+if (j) j.addEventListener('click', function () {
+  if (document.getElementById('wl-email').value.indexOf('@') === -1) return;
+  document.getElementById('wl-form').style.display = 'none';
+  document.getElementById('wl-done').style.display = 'block';
+});
 </script>
 </body>
 </html>
