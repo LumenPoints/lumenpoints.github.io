@@ -1,25 +1,268 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LumenPoints — Back Soon</title><meta name="description" content="LumenPoints is under renovation and will be back shortly."><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
-*{box-sizing:border-box}html,body{margin:0;padding:0}
-body{min-height:100vh;background:#161C19;color:#EDE6D6;font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;display:grid;place-items:center;padding:40px 24px;-webkit-font-smoothing:antialiased}
-a{color:#C9A978;text-decoration:none;border-bottom:1px solid rgba(201,169,120,.35);transition:color 220ms cubic-bezier(.32,.72,.32,1),border-color 220ms cubic-bezier(.32,.72,.32,1)}
-a:hover{color:#EDE6D6;border-color:rgba(237,230,214,.55)}
-.wrap{width:100%;max-width:600px;display:flex;flex-direction:column;gap:40px}
-.mark{display:flex;align-items:center;gap:6px}
-.star{width:52px;height:52px;flex:none;display:block}
-.wordmark{height:56px;width:auto;display:block}
-.eyebrow{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#9C9A92;margin:0}
-h1{margin:0;font-size:clamp(40px,8vw,64px);font-weight:400;line-height:1.04;letter-spacing:-.02em}
-h1 span{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:#C9A978}
-.lede{margin:0;font-size:17px;line-height:1.6;color:#B7B2A6;max-width:46ch;text-wrap:pretty}
-.meta{display:flex;flex-direction:column;gap:14px;border-top:1px solid #2E3631;padding-top:22px}
-.row{display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.5}
-.row dt{flex:none;width:104px;margin:0;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7E7C74}
-.row dd{margin:0;color:#EDE6D6}
-dl{margin:0;display:flex;flex-direction:column;gap:14px}
-</style></head>
-<body><main class="wrap">
-<div class="mark"><img class="star" src="coming-soon-assets/star-mark.png" alt=""><img class="wordmark" src="coming-soon-assets/wordmark-cream.png" alt="LumenPoints"></div>
-<div style="display:flex;flex-direction:column;gap:20px"><p class="eyebrow">Under renovation</p><h1>Back <span>shortly.</span></h1><p class="lede">We're rebuilding a few things behind the scenes. Everything is safe, nothing is going away — the site will be back up in a couple of days.</p></div>
-<div class="meta"><dl><div class="row"><dt>Expected</dt><dd>Back online in 2–3 days</dd></div><div class="row"><dt>Questions</dt><dd><a href="mailto:hello@lumenpoints.com">hello@lumenpoints.com</a></dd></div></dl></div>
-</main></body></html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LumenPoints — Every point of your health, illuminated.</title>
+<link rel="icon" href="assets/favicon.png">
+<meta name="description" content="Every point of your health, illuminated. Supplements, body, blood, skin, and mind — tracked in one app.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/lumenpoints-design-system-019e190f-6523-73f5-82e2-dca513deb5d0/colors_and_type.css">
+  <script src="_ds/lumenpoints-design-system-019e190f-6523-73f5-82e2-dca513deb5d0/_ds_bundle.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Outfit:wght@300;400;500;600&amp;display=swap">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #F8F1E3; font-family: "Outfit", system-ui, sans-serif; color: #1A1A1A; }
+    a { color: #3A2E24; text-decoration: none; transition: color 220ms cubic-bezier(0.32,0.72,0.32,1); }
+    a:hover { color: #9C8A66; }
+    input::placeholder { color: #807C75; }
+  </style>
+</helmet>
+<div style="min-width:320px">
+  <nav data-screen-label="Nav" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,56px);background:rgba(248,241,227,0.88);backdrop-filter:blur(20px);border-bottom:1px solid #E1D3B4">
+    <a href="#top" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/logo-pack/Wordmark-Transparent-1800.png" alt="LumenPoints" style="height:84px;display:block"></a>
+    <div style="display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap">
+      <a href="#points">Five Points</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#premium">Premium</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="#waitlist" style="display:inline-flex;align-items:center;white-space:nowrap;padding:12px 22px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:11px;font-weight:600;letter-spacing:0.18em" style-hover="background:#1C1A17;color:#F8F1E3">Join the Waitlist</a>
+    </div>
+  </nav>
+
+  <section id="top" data-screen-label="Hero" style="max-width:1240px;margin:0 auto;padding:96px 56px 0;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:30px;padding-bottom:80px">
+      <img src="assets/logo-pack/StarMark-Transparent-400px.png" alt="" style="width:72px;height:72px;object-fit:contain;align-self:flex-start">
+      <h1 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(52px,5.8vw,84px);line-height:1.02;letter-spacing:-0.01em;color:#1A1A1A;text-wrap:balance">Every point of your health, <em style="font-style:italic;font-weight:500;color:#C9A978">illuminated.</em></h1>
+      <p style="margin:0;font-size:19px;font-weight:300;line-height:1.65;color:#1A1A1A;max-width:50ch">Supplements, body, blood, skin, and mind — tracked in one app, with AI observations across all five.</p>
+      <div style="display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:500;letter-spacing:0.01em;color:#3A2E24;border-top:1px solid #CBB88E;border-bottom:1px solid #CBB88E;padding:14px 0;align-self:flex-start">Never sold, never shared, never used to train AI.</div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+        <a href="#waitlist" style="display:inline-flex;align-items:center;padding:17px 40px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase" style-hover="background:#1C1A17;color:#F8F1E3">Join the Waitlist</a>
+        <div style="font-size:13px;font-weight:300;letter-spacing:0.02em;color:#807C75">{{ heroMicro }}</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;align-self:end">
+      <iframe src="{{ phoneSrc }}" title="LumenPoints app" scrolling="no" style="width:408px;height:812px;border:0;transform:scale(0.84);transform-origin:bottom center;margin-top:-120px;pointer-events:none"></iframe>
+    </div>
+  </section>
+
+  <section data-screen-label="Golden band" style="width:100%;height:420px;overflow:hidden;position:relative">
+    <img src="assets/img-band.png" alt="Morning light on a warm cream wall" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+      <p style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(38px,4.6vw,60px);color:#3A342A;text-align:center;max-width:22ch;text-wrap:balance">One place.<br>&nbsp;Every metric.<br>&nbsp;Full clarity.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="The problem" style="max-width:780px;margin:0 auto;padding:128px 56px 104px;text-align:center;display:flex;flex-direction:column;gap:30px;align-items:center">
+    <div style="font-size:16px;font-weight:500;letter-spacing:0.3em;color:#9C8A66;text-transform:uppercase">The Problem</div>
+    <h2 style="margin: 0; font-family: 'Cormorant Garamond',Georgia,serif; font-weight: 500; font-size: clamp(38px,4.2vw,54px); line-height: 1.12; color: var(--lp-on-onboard-mute); text-wrap: balance">Your health data lives in six places. </h2>
+    <em style="font-style: italic; color: var(--lp-forest-deep); font-size: 54px; font-family: &quot;Cormorant Garamond&quot;, Georgia, serif">None of them talk.</em><p style="margin:0;font-size:18px;font-weight:300;line-height:1.75;color:#1A1A1A">Supplements in one app. Bloodwork in PDFs from three different labs across five years. Your skincare routine in your head. Body metrics on a scale that talks to nothing. Nothing connects. Nothing carries forward.</p>
+    <img src="assets/logo-pack/StarMark-Transparent-400px.png" alt="" style="width:72px;height:72px;object-fit:contain">
+    <p style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:30px;line-height:1.35;color:#3A2E24">LumenPoints is the layer that sits on top of all of it.</p>
+  </section>
+
+  <section id="points" data-screen-label="Five Points" style="max-width:1140px;margin:0 auto;padding:0 56px 80px;display:flex;flex-direction:column;gap:88px">
+    <div style="text-align:center;display:flex;flex-direction:column;gap:18px;border-top:1px solid #E1D3B4;padding-top:88px">
+      <div style="font-size:16px;font-weight:500;letter-spacing:0.3em;color:#9C8A66;text-transform:uppercase">The Five Points</div>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(48px,5.4vw,70px);line-height:1.08;color:#1A1A1A">Five Points. <em style="font-style:italic;color:#C9A978">One app.</em></h2>
+      <p style="margin:0 auto;font-size:18px;font-weight:300;line-height:1.65;color:#1A1A1A;max-width:56ch">Real health isn't one thing. It's five things moving together — and they only make sense side by side.</p>
+    </div>
+    <sc-for list="{{ points }}" as="pt" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:88px;align-items:center;direction:{{ pt.dir }}">
+        <div style="direction:ltr">
+          <img src="{{ pt.img }}" alt="{{ pt.alt }}" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block">
+        </div>
+        <div style="direction:ltr;display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:10px;height:10px;border-radius:999px;background:{{ pt.color }};display:inline-block"></span>
+            <span style="font-size:12px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#807C75">{{ pt.num }}</span>
+          </div>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:52px;line-height:1.1;color:{{ pt.color }}">{{ pt.name }}</h3>
+          <p style="margin: 0; font-size: 21px; font-weight: 300; line-height: 1.7; color: #1A1A1A">{{ pt.copy }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <section data-screen-label="What makes it different" style="background:#EDEAE4">
+    <div style="max-width:1140px;margin:0 auto;padding:112px 56px;display:flex;flex-direction:column;gap:56px">
+      <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(36px,4vw,50px);line-height:1.12;color:#1A1A1A;max-width:24ch;text-wrap:balance">Storage apps hold your data. <em style="font-style:italic;color:#C9A978">LumenPoints reads across it.</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px">
+        <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:48px;aspect-ratio:1/1">
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:30px;line-height:1;color:#C9A978">01</div>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:34px;line-height:1.12;color:#3A2E24">Observations across all five Points</h3>
+          <p style="margin:0;font-size:17px;font-weight:300;line-height:1.7;color:#1A1A1A">Your stack alongside your labs. Your routine alongside your goals. LumenPoints surfaces observations across the Points you track, in plain language. Educational and informational only.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:48px;aspect-ratio:1/1">
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:30px;line-height:1;color:#C9A978">02</div>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:34px;line-height:1.12;color:#3A2E24">Scan the bottle</h3>
+          <p style="margin:0;font-size:17px;font-weight:300;line-height:1.7;color:#1A1A1A">Point your camera at a supplement label. Name, dose, and form fill themselves in. Data entry is what kills every supplement tracker, so we removed it.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:48px;aspect-ratio:1/1">
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:30px;line-height:1;color:#C9A978">03</div>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:34px;line-height:1.12;color:#3A2E24">Bloodwork from any lab, any year</h3>
+          <p style="margin:0;font-size:17px;font-weight:300;line-height:1.7;color:#1A1A1A">Upload a PDF or photo from any lab or doctor's office. Markers are pulled out and shown against your lab's printed reference range, then tracked over time.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:48px;aspect-ratio:1/1">
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:30px;line-height:1;color:#C9A978">04</div>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:34px;line-height:1.12;color:#3A2E24">Skin and Mind are included</h3>
+          <p style="margin:0;font-size:17px;font-weight:300;line-height:1.7;color:#1A1A1A">Not add-ons. Two of the five Points, treated as seriously as the labs. Your skin is the outer surface of what is happening underneath, so it belongs next to what you are putting into your body. Your mindset is the same signal read a different way. Neither one is a side note — they are part of the whole picture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="How it works" style="max-width:1140px;margin:0 auto;padding:112px 56px;display:flex;flex-direction:column;gap:56px">
+    <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(36px,4vw,50px);color:#1A1A1A">Three <em style="font-style:italic;color:#C9A978">seamless steps.</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:44px 40px;min-height:300px">
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:52px;line-height:1;color:#C9A978">01</div>
+        <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A">Download and set up your account. One person, one account. About two minutes.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:44px 40px;min-height:300px">
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:52px;line-height:1;color:#C9A978">02</div>
+        <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A">Add what you already have. Scan your supplement bottles, upload a lab PDF, connect Apple Health. Old bloodwork is welcome — it makes the trends better.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;justify-content:center;background:#F8F1E3;border:1px solid #CBB88E;border-radius:22px;padding:44px 40px;min-height:300px">
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:52px;line-height:1;color:#C9A978">03</div>
+        <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A">Log as you go. Check off your stack, run your routine, write a line in the journal. The app builds the picture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" data-screen-label="Privacy" style="background:#1C1A17;color:#F8F1E3">
+    <div style="max-width:1140px;margin:0 auto;padding:120px 56px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:72px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:36px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4.4vw,56px);line-height:1.1;color:#F8F1E3;text-wrap:balance">Never sold, never shared, <em style="font-style:italic;color:#C9A978">never used to train AI.</em></h2>
+        <p style="margin:0;font-size:18px;font-weight:300;line-height:1.75;color:rgba(248,241,227,0.88)">LumenPoints is funded by subscriptions. There is no advertising model here, which means there is no reason for your data to go anywhere. It is yours, it stays yours, and you can delete all of it at any time.</p>
+        <div style="display:flex;flex-direction:column">
+          <p style="margin:0;padding:20px 0;border-top:1px solid rgba(201,169,120,0.35);font-size:16px;font-weight:300;line-height:1.6;color:#F8F1E3">We do not sell your data. There is no ad-supported revenue path.</p>
+          <p style="margin:0;padding:20px 0;border-top:1px solid rgba(201,169,120,0.35);font-size:16px;font-weight:300;line-height:1.6;color:#F8F1E3">We do not use your data to train AI models.</p>
+          <p style="margin:0;padding:20px 0;border-top:1px solid rgba(201,169,120,0.35);font-size:16px;font-weight:300;line-height:1.6;color:#F8F1E3">We do not share your data with third parties for marketing or analytics.</p>
+          <p style="margin:0;padding:20px 0;border-top:1px solid rgba(201,169,120,0.35);border-bottom:1px solid rgba(201,169,120,0.35);font-size:16px;font-weight:300;line-height:1.6;color:#F8F1E3">Delete your account from inside the app and your data goes with it.</p>
+        </div>
+        <a href="privacy/" style="color:#C9A978;font-size:15px;font-weight:500;letter-spacing:0.04em" style-hover="color:#D9C28F">Read the full Privacy Policy →</a>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <img src="assets/logo-pack/Compass-Transparent-800px.png" alt="The five Points arranged as a compass" style="width:100%;max-width:380px;display:block">
+      </div>
+    </div>
+  </section>
+
+  <section id="premium" data-screen-label="Premium" style="max-width:900px;margin:0 auto;padding:128px 56px;display:flex;flex-direction:column;gap:36px;align-items:center;text-align:center">
+    <div style="font-size:12px;font-weight:500;letter-spacing:0.28em;color:#9C8A66;text-transform:uppercase">LumenPoints Premium</div>
+    <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4.4vw,54px);color:#1A1A1A">One membership, <em style="font-style:italic;color:#C9A978">every Point.</em></h2>
+    <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A;max-width:52ch">LumenPoints will be available as a subscription. Join the waitlist and we'll share the details when it's on the App Store.</p>
+    <div style="display:flex;justify-content:center;border-top:1px solid #CBB88E;border-bottom:1px solid #CBB88E;padding:48px 64px;margin-top:8px;width:100%;box-sizing:border-box">
+      <a href="#waitlist" style="display:inline-flex;align-items:center;padding:17px 40px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase" style-hover="background:#1C1A17;color:#F8F1E3">Join the Waitlist</a>
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="FAQ" style="max-width:780px;margin:0 auto;padding:0 56px 112px;display:flex;flex-direction:column;gap:44px">
+    <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(34px,3.8vw,46px);color:#1A1A1A">Questions, <em style="font-style:italic;color:#C9A978">answered.</em></h2>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-top:1px solid #E1D3B4">
+          <button onClick="{{ f.toggle }}" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;background:none;border:0;cursor:pointer;font-family:'Outfit',sans-serif;text-align:left">
+            <span style="font-size:18px;font-weight:400;color:#1A1A1A">{{ f.q }}</span>
+            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:30px;color:#C9A978;line-height:1">{{ f.mark }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;padding:0 48px 28px 0;font-size:17px;font-weight:300;line-height:1.7;color:#4A4844">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="waitlist" data-screen-label="Final CTA" style="background:#F1E7D0">
+    <div style="max-width:680px;margin:0 auto;padding:120px 56px;display:flex;flex-direction:column;gap:26px;align-items:center;text-align:center">
+      <img src="assets/logo-pack/StarMark-Transparent-200px.png" alt="" style="width:40px;height:40px;object-fit:contain">
+      <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4.4vw,54px);color:#1A1A1A">Be among the <em style="font-style:italic;color:#C9A978">first to know.</em></h2>
+      <p style="margin:0;font-size:18px;font-weight:300;line-height:1.7;color:#1A1A1A">Join the waitlist and we'll email you the day LumenPoints is on the App Store. One email. No spam, no sharing, ever.</p>
+      <sc-if value="{{ notJoined }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:12px;width:100%;max-width:500px;margin-top:8px">
+          <input type="email" placeholder="Your email address" value="{{ email }}" onChange="{{ setEmail }}" style="flex:1;padding:17px 24px;border-radius:999px;border:1px solid #CBB88E;background:#FFFFFF;font-family:'Outfit',sans-serif;font-size:16px;font-weight:300;color:#1A1A1A;outline:none">
+          <button onClick="{{ join }}" style="padding:17px 32px;border-radius:999px;background:#1C1A17;color:#F8F1E3;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:0;cursor:pointer;white-space:nowrap">Join the Waitlist</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ joined }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:8px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:#3A2E24">You're on the list. We'll email you the day LumenPoints is live — one email, nothing else.</p>
+      </sc-if>
+    </div>
+  </section>
+
+  <section data-screen-label="Disclaimer" style="max-width:860px;margin:0 auto;padding:56px">
+    <p style="margin:0;font-size:13px;font-weight:300;line-height:1.8;color:#807C75;text-align:center">LumenPoints is a wellness app, not a medical service. AI-generated observations, status indicators, and any insights are educational only and do not constitute medical advice, diagnosis, treatment, or a medical opinion. Using LumenPoints does not create a doctor-patient or other professional relationship. Always consult your physician before making changes to your supplements, medications, or health routine. Do not disregard, avoid, or delay seeking professional medical advice because of anything you see in the app.</p>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#1C1A17;color:#F8F1E3">
+    <div style="max-width:1140px;margin:0 auto;padding:80px 56px 48px;display:flex;flex-direction:column;gap:44px">
+      <img src="assets/logo-pack/Lockup-Transparent-600px.png" alt="LumenPoints — Every point of your health, illuminated." style="width:460px;max-width:100%;display:block;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid rgba(201,169,120,0.35);padding-top:32px;font-size:14px;font-weight:300;color:rgba(248,241,227,0.82)">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span>LumenPoints, LLC</span>
+          <a href="mailto:support@lumenpoints.com" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">support@lumenpoints.com</a>
+        </div>
+        <div style="display:flex;gap:24px;align-items:flex-start">
+          <a href="privacy/" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">Privacy Policy</a>
+          <a href="terms/" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">Terms of Service</a>
+          <a href="support.html" style="color:rgba(248,241,227,0.82)" style-hover="color:#F8F1E3">Support</a>
+          <span>Instagram @LumenPoints</span>
+        </div>
+      </div>
+      <div style="font-size:13px;font-weight:300;color:rgba(248,241,227,0.6);text-align:center">© 2026 LumenPoints, LLC</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;splash&quot;,&quot;options&quot;:[&quot;splash&quot;,&quot;trends&quot;,&quot;today&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { open: -1, email: "", joined: false };
+  renderVals() {
+    const screen = this.props.heroScreen ?? "splash";
+    const faqsData = [
+      ["Is this a medical app?", "No. LumenPoints is a wellness tracker. It does not diagnose, treat, or provide medical advice, and nothing in it replaces a conversation with your physician."],
+      ["What does the AI actually do?", "It reads what you have logged and writes educational observations across your Points — for example, noting which items in your stack relate to markers you track. It does not interpret your labs or tell you what to do."],
+      ["Where do the green, amber, and red colors come from?", "From your lab's own printed reference range for that marker, not from us. The color tells you whether a value sits inside the range your lab published. It is informational, not diagnostic."],
+      ["Can I upload old bloodwork?", "Yes. Any lab, any year, PDF or photo. Older panels make your trends more useful."],
+      ["Is my data used to train AI?", "No. Never sold, never shared, never used to train AI."],
+      ["Is there an Android version?", "Not yet. LumenPoints is iPhone-only at launch. Join the waitlist and we will let you know if that changes."],
+    ];
+    return {
+      phoneSrc: "app-kit/phone.html?screen=" + screen,
+      heroMicro: "iPhone. Coming to the App Store, late summer 2026.",
+      points: [
+        { name: "Supplements", num: "Point 01", color: "#2C7537", img: "assets/img-supplements.png", alt: "Amber supplement bottles in morning light", dir: "ltr",
+          copy: "Track your full stack — supplements, peptides, and medications — with daily check-off and reminders by time slot. Scan a bottle and the label fills itself in. Plenty of apps will hold a list of what you take. A list on its own doesn't tell you much. Because your stack sits beside your labs, your body metrics, and your routine, LumenPoints surfaces observations across them — overlaps between items, gaps against the markers you track, how your timing lines up with the rest of your day. Educational and informational only, and specific to what you have logged." },
+        { name: "Body", num: "Point 02", color: "#606060", img: "assets/img-body.png", alt: "Linen towels and a carafe of water in soft light", dir: "rtl",
+          copy: "Weight, body fat, muscle, and visceral fat, trended over time. Syncs with Apple Health and Renpho. Optional cycle tracking, off by default. Your devices already capture all of this — the harder question is what you actually do with it. LumenPoints brings those measurements together with the rest of your Points, so the numbers carry meaning instead of sitting in separate apps." },
+        { name: "Blood", num: "Point 03", color: "#BE6D59", img: "assets/img-blood.png", alt: "Lab reports in a cream folder beside a glass of water", dir: "ltr",
+          copy: "Upload lab results from any lab, any year — PDF or photo. Values are shown against your lab's own reference range and tracked across every panel you've ever had. Bloodwork is the measurement that comes from the inside out, and it is far more useful when you can see it as a line across the years rather than a single page in a folder — and more useful still when it sits beside the outside factors you track, your stack, your routine, your sleep, instead of standing alone as numbers on a page." },
+        { name: "Skin", num: "Point 04", color: "#553E8D", img: "assets/img-skin.png", alt: "Minimal skincare bottles on a warm cream shelf", dir: "rtl",
+          copy: "Morning and evening routines, your product library, and gentle reminders so the routine actually happens. Upload a regimen PDF from your dermatologist or esthetician, and photograph your products to add them. LumenPoints organizes the routine and surfaces observations related to the goals you've set — educational and informational only." },
+        { name: "Mind", num: "Point 05", color: "#224837", img: "assets/img-mind.png", alt: "An open journal and cup of tea in golden light", dir: "ltr",
+          copy: "A daily gratitude journal with a rotating 365-day wisdom and verse system. A quick energy, mood, and stress check-in takes seconds, and those entries are tracked over time so observations can follow the trends in how you feel. A small daily practice that gives you something useful to look back on." },
+      ],
+      faqs: faqsData.map(([q, a], i) => ({
+        q, a,
+        open: this.state.open === i,
+        mark: this.state.open === i ? "−" : "+",
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+      })),
+      email: this.state.email,
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      joined: this.state.joined,
+      notJoined: !this.state.joined,
+      join: () => { if (this.state.email.includes("@")) this.setState({ joined: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
