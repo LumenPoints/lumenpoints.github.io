@@ -280,6 +280,37 @@
     a { color: #3A2E24; text-decoration: none; transition: color 220ms cubic-bezier(0.32,0.72,0.32,1); }
     a:hover { color: #9C8A66; }
     input::placeholder, textarea::placeholder { color: #807C75; }
+
+    @media (max-width: 900px) {
+      body nav[data-screen-label="Nav"] { padding: 10px 16px !important; flex-wrap: wrap; row-gap: 8px; }
+      body nav[data-screen-label="Nav"] img { height: 44px !important; }
+      body nav[data-screen-label="Nav"] > div { gap: 12px !important; font-size: 10px !important; flex-wrap: wrap; justify-content: flex-end; }
+      body nav[data-screen-label="Nav"] > div > a:last-child { padding: 10px 16px !important; font-size: 10px !important; letter-spacing: 0.14em !important; }
+      body section { padding-left: 20px !important; padding-right: 20px !important; padding-top: 64px !important; padding-bottom: 64px !important; }
+      body section > div, body footer > div { padding-left: 20px !important; padding-right: 20px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+      body footer > div { padding-top: 56px !important; padding-bottom: 36px !important; }
+      [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+      [style*="direction:rtl"] { direction: ltr !important; }
+      [style*="aspect-ratio:1/1"] { aspect-ratio: auto !important; padding: 28px !important; }
+      [style*="min-height:300px"] { min-height: 0 !important; padding: 28px !important; }
+      img[alt="The LumenPoints app"] { width: 100% !important; }
+      body section[data-screen-label="Golden band"] { height: 320px !important; padding: 0 !important; }
+      body section[data-screen-label="Golden band"] p { font-size: 34px !important; }
+      h3[style*="font-size:52px"] { font-size: 38px !important; }
+      h3[style*="font-size:34px"] { font-size: 25px !important; }
+      [style*="max-width:500px"] { flex-direction: column !important; }
+      [style*="max-width:500px"] > button { width: 100%; }
+      #wl-form, #c-form { max-width: 100% !important; }
+      body img[alt="LumenPoints — Every point of your health, illuminated."] { width: 100% !important; }
+      body p, body li { text-wrap: pretty; }
+    }
+    @media (max-width: 560px) {
+      body nav[data-screen-label="Nav"] > div > a:not(:last-child) { display: none; }
+      body nav[data-screen-label="Nav"] { justify-content: space-between !important; }
+      body section[data-screen-label="Golden band"] { height: 260px !important; }
+      body section[data-screen-label="Golden band"] p { font-size: 28px !important; }
+      h3[style*="font-size:52px"] { font-size: 32px !important; }
+    }
   
 .h1:hover{background:#1C1A17;color:#F8F1E3}
 .h2:hover{color:#F8F1E3}
